@@ -3,7 +3,7 @@
     <div class="classListClass">
         <ul 
         *ngFor="let classes of this.or2.classesObject;let i=index" 
-        [hidden]="!hideAcessories(classes)"
+        [hidden]="!classes.show"
         >
             <li>
                 {{classes.name}} <a href="" style="text-decoration: none;" ><div class="hideLeClass">×</div></a>

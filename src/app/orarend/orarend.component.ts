@@ -16,10 +16,11 @@ export interface Napirend {
 
 // kommunikációs giga tömb, az összes osztályt tárolja az osztályos megjegyzésekkel
 export interface Classes {
-  [index:number]: {id:number, name:string, fullName:string, nameComment:string, activity:number}
+  [index:number]: {id:number, name:string, fullName:string, nameComment:string, activity:number, show:boolean}
 }
 // a classesObject megjegyzéseket tárolja
 export interface ClassesComment {
+  [x: string]: any;
   [index:number] : {id:number, hour:string, comment:string}
 }
 
@@ -52,12 +53,9 @@ export interface LanguageObj {
   masterDone:string, // mester osztály ennyiszer
   commentTitle:string, // megjegyzés
   commentHide:string, // megjegyzés elrejtése
-  commentViewNumber:number
+  commentViewNumber:number  // hány hozzászólás látszódjon
 
 }
-
-
-
 
 
 
@@ -69,8 +67,9 @@ export interface LanguageObj {
 export class OrarendComponent implements OnInit {
 
   constructor() { }
-
+  
   ngOnInit(): void {
+    
   }
 
 }

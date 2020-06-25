@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Or2Service } from './../services/or2.service';
+import { ClassesComment } from '../orarend.component';
 
 @Component({
   selector: 'app-or2comment',
@@ -11,6 +12,8 @@ export class Or2commentComponent implements OnInit {
   constructor( public or2:Or2Service ) { }
   
   myDate = new Date();
+  inversCommentObj:ClassesComment = [];
+  allItems:number = this.or2.commentObject.length;
 
   getMyDate2() {
 
@@ -38,17 +41,14 @@ export class Or2commentComponent implements OnInit {
 
   }
 
-  // Commenteket jelenít meg, aszerint hogy hány van engedélyezve
-  showComment( i ){
-    var show:boolean = true;
-    if( i < this.or2.languageObject.commentViewNumber ){
-      show = false;
-    }
-    return show;
-  }
-
+  
   ngOnInit(): void {
-
+    
+    this.inversCommentObj = this.or2.commentObject.reverse();
+    
+    this.inversCommentObj = this.inversCommentObj.splice( this.or2.languageObject.commentViewNumber, this.allItems );
+    console.log( this.inversCommentObj );
+    //commentViewNumber
     //console.log( 'kl', this.myDate.getUTCMonth()+1, this.myDate.getUTCDate() );
     
   }
