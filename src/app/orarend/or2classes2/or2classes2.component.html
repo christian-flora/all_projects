@@ -1,0 +1,16 @@
+<div class="classesClass">
+    <div class="cimClass">{{this.or2.languageObject.classesTitle}}</div>
+    <div class="classListClass">
+        <ul 
+        *ngFor="let classes of this.or2.classesObject;let i=index" 
+        [hidden]="!hideAcessories(classes)"
+        >
+            <li>
+                {{classes.name}} <a href="" style="text-decoration: none;" ><div class="hideLeClass">×</div></a>
+            </li>
+        </ul>
+    </div>
+    <div class="newClassClass">
+        <a href="" class="newclasses">{{this.or2.languageObject.classesAddNew}}</a>
+    </div>
+</div>

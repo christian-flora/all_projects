@@ -1,0 +1,53 @@
+.commentClass{
+    color: black;
+}
+.dateClass{
+    display: inline;
+}
+.headLine{
+    padding-bottom: 5px;
+}
+.nameClass{
+    display: inline;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.commentViewClass{
+    padding-bottom: 25px;
+    font-size: 14px;
+}
+.ulClass{
+    color: black;
+    
+    list-style-type: none;
+    line-height: 0px;
+}
+.liClass{
+    color: black;
+    padding-top: 13px;
+}
+.titleClass{
+    display: inline;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.hideCommentClass{
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+a {
+    text-decoration: none;
+    color: dimgray;
+}
+a:hover {
+    color: chocolate;
+}

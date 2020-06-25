@@ -1,0 +1,29 @@
+
+.holder{
+    padding-left: 45px;
+}
+.titlett {
+    
+    font-weight: 700;
+    font-size: 64px;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+    padding-top: 75px;
+
+}
+a {
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+}
+a:hover {
+    color: chocolate;
+}
+.aclass {
+    padding-top: 45px;
+}
+.arrow{
+    display: inline;
+    font-size: 17px;
+    color: darkgray;
+}

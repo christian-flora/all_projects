@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+.orarendholder{
+    font-family: 'Roboto Condensed', sans-serif;
+    color: black;
+    text-align: center;
+}
+
+.contentHolder{
+    color: black;
+}
+
+.userClass{ 
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 1.5%;
+    margin-right: 25px;
+
+    text-align: right;
+
+}
+
+.commentClass{
+    margin-top: 5%;
+    margin-right: 15px;
+}
+
+.classesClass{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 4.5%;
+    margin-left: 35px;
+
+    text-align: left;
+
+}
