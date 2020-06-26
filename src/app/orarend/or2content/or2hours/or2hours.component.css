@@ -1,0 +1,43 @@
+.holder{
+    text-align: center;
+}
+.hoursName{
+    color: #a09a5c;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 21px;
+}
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+.hourbox{
+
+    background-color: #fbfaf1;
+    border-radius: 10px;
+
+    width: 100px;
+    padding-top: 6px;
+    padding-bottom: 5px;
+    margin-bottom: 4px;
+    
+    text-align: center;
+    color: #67612b;
+    font-size: 16px;
+
+}
+.inactiveHourBox{
+
+    background-color: #fff;
+    border: 2px solid #fbfaf1;
+
+    color: #aaa362;
+
+    width: 96px;
+    padding-top: 4px;
+    padding-bottom: 3px;
+
+}

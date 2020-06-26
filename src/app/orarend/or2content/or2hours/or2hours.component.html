@@ -1,1 +1,8 @@
-<p>or2hours works!</p>
+<div class="holder">
+    <div class="hoursName">{{this.or2.languageObject.masterTypes}}</div>
+    <div class="hours">
+        <ul>
+            <li *ngFor="let hour of this.or2.hoursObject.active" class="hourbox" [ngClass]="{'inactiveHourBox':this.or2.hoursObject.special.includes(hour)}">{{hour}}</li>
+        </ul>
+    </div>
+</div>

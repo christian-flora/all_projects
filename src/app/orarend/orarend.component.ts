@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 
 // master class definíciója, meglévő vagy új mester napirend használja
 export interface Napirend {
-  [index:number]:{ hour:string, classes:string, id:number, working:boolean }
+  [index:number]:{ id:number, type:string }
 }
 
 
@@ -27,6 +27,7 @@ export interface ClassesComment {
 
 // órák eltárolására szolgál
 export interface Hours {
+  [x:string]: any;
   [index:number]:string
 }
 // kommunikációs tömb, tartalmazza az összes órával kapcsolatos információt

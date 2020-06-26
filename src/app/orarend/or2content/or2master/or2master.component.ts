@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Or2Service } from './../../services/or2.service';
 
 @Component({
   selector: 'app-or2master',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Or2masterComponent implements OnInit {
 
-  constructor() { }
+  constructor( public or2:Or2Service ) { }
 
   ngOnInit(): void {
+    console.log("fut");
+    
   }
 
 }

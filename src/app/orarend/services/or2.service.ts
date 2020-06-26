@@ -34,7 +34,7 @@ export class Or2Service {
   // nagyon fontos, ez irányítja az aktív órák számát
   hoursActive:Hours = ['07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00'];
   // napi hivatalos inaktív órák
-  hoursSpecial:Hours = ['12:00', '13:00', '14:00'];
+  hoursSpecial:Hours = ['12:00', '13:00', '18:00'];
   // napi hivatalos munkaórák
   hoursWorking:Hours = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'];
 
@@ -75,35 +75,35 @@ export class Or2Service {
   // BEÉGETETT MESTER ÓRAREND
   // napi objektumok, ezek az alapértelmezettek, be vannak égetve
   szabadnaposObj:Napirend = [
-    {hour:'07:00', classes:'Tesi', id:1001, working:false },
-    {hour:'08:00', classes:'Webdesign', id:1009, working:false },
-    {hour:'09:00', classes:'Angular', id:1004, working:false },
-    {hour:'10:00', classes:'Angular', id:1004, working:false },
-    {hour:'11:00', classes:'Angular', id:1004, working:false },
-    {hour:'12:00', classes:'---', id:0, working:false },
-    {hour:'13:00', classes:'---', id:0, working:false },
-    {hour:'14:00', classes:'Angol', id:1012, working:false },
-    {hour:'15:00', classes:'Angol', id:1012, working:false },
-    {hour:'16:00', classes:'Angol', id:1012, working:false },
-    {hour:'17:00', classes:'Fotózás', id:1002, working:false },
-    {hour:'18:00', classes:'Fotózás', id:1002, working:false },
-    {hour:'19:00', classes:'Tesi', id:1001, working:false }
+    {id:1001, type:"private" },
+    {id:1009, type:"private" },
+    {id:1004, type:"private" },
+    {id:1004, type:"private" },
+    {id:1004, type:"private" },
+    {id:0, type:"private" },
+    {id:0, type:"private" },
+    {id:1012, type:"private" },
+    {id:1012, type:"private" },
+    {id:1012, type:"private" },
+    {id:1002, type:"private" },
+    {id:1002, type:"private" },
+    {id:1001, type:"private" }
   ];
 
   munkanaposObj:Napirend = [
-    {hour:'07:00', classes:'Tesi', id:1001, working:false },
-    {hour:'08:00', classes:'Webdesign', id:1009, working:false },
-    {hour:'09:00', classes:'Angular', id:1004, working:true },
-    {hour:'10:00', classes:'Angular', id:1004, working:true },
-    {hour:'11:00', classes:'Angular', id:1004, working:true },
-    {hour:'12:00', classes:'---', id:0, working:true },
-    {hour:'13:00', classes:'---', id:0, working:true },
-    {hour:'14:00', classes:'Angol', id:1012, working:true },
-    {hour:'15:00', classes:'Angol', id:1012, working:true },
-    {hour:'16:00', classes:'Angol', id:1012, working:true },
-    {hour:'17:00', classes:'Fotózás', id:1002, working:true },
-    {hour:'18:00', classes:'Fotózás', id:1002, working:true },
-    {hour:'19:00', classes:'Tesi', id:1001, working:false }
+    {id:1001, type:"work" },
+    {id:1009, type:"work" },
+    {id:1004, type:"work" },
+    {id:1004, type:"work" },
+    {id:1004, type:"work" },
+    {id:0, type:"work" },
+    {id:0, type:"work" },
+    {id:1012, type:"work" },
+    {id:1012, type:"work" },
+    {id:1012, type:"work" },
+    {id:1002, type:"work" },
+    {id:1002, type:"work" },
+    {id:1001, type:"work" }
   ];
 
   // ez tárolja a mester napokat

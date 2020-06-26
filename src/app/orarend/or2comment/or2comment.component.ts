@@ -49,7 +49,7 @@ export class Or2commentComponent implements OnInit {
     this.inversCommentObj = this.or2.commentObject.reverse();
     
     this.inversCommentObj = this.inversCommentObj.splice( this.or2.languageObject.commentViewNumber, this.allItems );
-    console.log( this.inversCommentObj );
+    //console.log( this.inversCommentObj );
     //commentViewNumber
     //console.log( 'kl', this.myDate.getUTCMonth()+1, this.myDate.getUTCDate() );
     
