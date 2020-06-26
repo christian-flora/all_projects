@@ -1,0 +1,21 @@
+.headLine{
+    padding-top: 8%;
+    font-size: 72px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.contentClass{
+    padding-top: 30px;
+}
+.hoursClass {
+    display: inline-block;
+    padding-right: 26px;
+}
+.masterClass {
+    display: inline-block;
+    padding-right: 26px;
+}
+.addMasterClass {
+    display: inline-block;
+}

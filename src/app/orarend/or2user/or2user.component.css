@@ -1,0 +1,35 @@
+.userclass{
+    color: black;
+}
+.usernameclass{
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    float: right;
+    text-transform: uppercase;
+}
+.userlinksclass{
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+a{
+    color: black;
+}
+a:hover {
+    color: chocolate;
+}
+.dotclass{
+    height: 55px;
+    width: 55px;
+    background-color: #ffffff;
+    border: 3px solid black;
+    border-radius: 50%;
+    display: inline-block;
+}
+.boxclass{
+    display:inline-block;
+    margin-right: 35px;
+    vertical-align: 13px;
+}

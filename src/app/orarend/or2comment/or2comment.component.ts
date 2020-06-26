@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Or2Service } from './../services/or2.service';
+
+// interface
 import { ClassesComment } from '../orarend.component';
 
 @Component({

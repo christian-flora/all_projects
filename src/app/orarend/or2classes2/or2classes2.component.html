@@ -1,9 +1,12 @@
 <div class="classesClass">
     <div class="cimClass">{{this.or2.languageObject.classesTitle}}</div>
+    <div class="classesChanger">
+        <a href="" class="classesChangeBtn" [class.btnInactive]="this.or2.languageObject.baseClassesType == 'private'">MAGÁN</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="classesChangeBtn"  [class.btnInactive]="this.or2.languageObject.baseClassesType == 'work'">Munka</a>
+    </div>
     <div class="classListClass">
         <ul 
         *ngFor="let classes of this.or2.classesObject;let i=index" 
-        [hidden]="!classes.show"
+        [hidden]="classes.type != this.or2.languageObject.baseClassesType"
         >
             <li>
                 {{classes.name}} <a href="" style="text-decoration: none;" ><div class="hideLeClass">×</div></a>

@@ -16,7 +16,7 @@ export interface Napirend {
 
 // kommunikációs giga tömb, az összes osztályt tárolja az osztályos megjegyzésekkel
 export interface Classes {
-  [index:number]: {id:number, name:string, fullName:string, nameComment:string, activity:number, show:boolean}
+  [index:number]: {id:number, name:string, fullName:string, nameComment:string, activity:number, type:string}
 }
 // a classesObject megjegyzéseket tárolja
 export interface ClassesComment {
@@ -46,6 +46,7 @@ export interface LanguageObj {
   
   classesTitle:string, // osztály megnevezése
   classesAddNew:string, // osztályhoz új felvétel
+  baseClassesType:string, // megjelenítendő kategória privát / work, van még az assets de az csak a működéshez használt, nem megjelenítendő
   userSettings:string, // felhasználó név alatti beállítások
   userLogout:string, // felhasználó név alatti  kilépés
   masterTypes:string, // mester osztályok gyűjtő megnevezése
@@ -53,6 +54,7 @@ export interface LanguageObj {
   masterDone:string, // mester osztály ennyiszer
   commentTitle:string, // megjegyzés
   commentHide:string, // megjegyzés elrejtése
+  siteName:string,  // az oldal nevét tartalmazza
   commentViewNumber:number  // hány hozzászólás látszódjon
 
 }
