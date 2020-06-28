@@ -1,0 +1,19 @@
+.addNew{
+    width: 36px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: 8px;
+    
+    background-color: #fff;
+    border: 2px solid #d3d2c4;
+    border-radius: 10px;
+
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    color: #575004;
+}
+a {
+    text-decoration: none;
+}

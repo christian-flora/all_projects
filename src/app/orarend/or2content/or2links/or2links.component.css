@@ -1,0 +1,28 @@
+.holder{
+    padding-top: 40px;
+}
+.archive {
+    display: inline-block;
+    padding-right: 30px;
+    text-transform: uppercase;
+}
+.stat {
+    display: inline-block;
+    text-transform: uppercase;
+}
+span{
+    font-size: 22px;
+}
+a{
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.yogi{
+    font-size: 14px;
+    padding-top: 15px;
+}
+.ccc{
+    display: inline-block;
+    font-size: 18px;
+}

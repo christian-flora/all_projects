@@ -1,7 +1,11 @@
 <div class="classesClass">
     <div class="cimClass">{{this.or2.languageObject.classesTitle}}</div>
     <div class="classesChanger">
-        <a href="" class="classesChangeBtn" [class.btnInactive]="this.or2.languageObject.baseClassesType == 'private'">MAGÁN</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="classesChangeBtn"  [class.btnInactive]="this.or2.languageObject.baseClassesType == 'work'">Munka</a>
+        <a 
+        class="classesChangeBtn" 
+        (click)="this.or2.classChange('private')"
+        [class.btnInactive]="this.or2.languageObject.baseClassesType == 'private'"
+        >{{this.or2.languageObject.baseClassesA}}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a (click)="this.or2.classChange('work')" class="classesChangeBtn"  [class.btnInactive]="this.or2.languageObject.baseClassesType == 'work'">{{this.or2.languageObject.baseClassesB}}</a>
     </div>
     <div class="classListClass">
         <ul 

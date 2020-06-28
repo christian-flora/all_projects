@@ -11,14 +11,19 @@ export class Or2Service {
     classesTitle:'Osztályok',
     classesAddNew: 'Osztály hozzáadása',
     baseClassesType: 'private', // work, private, assets (de ezt nem jelenítjük meg)
+    baseClassesA: 'Magán',
+    baseClassesB: 'Munka',
     commentHide: 'Elrejtés',
     commentTitle: 'Megjegyzések',
-    commentViewNumber: 10,
+    commentViewNumber: 10, // ennyi komment látszódik aktuálisan
     masterDone: 'Eddig:',
     masterDoneCta:'Teljesítve',
     masterTypes: 'Napirend:',
     userLogout: 'Kijelentkezés',
     userSettings: 'Beállítások',
+    archiveCta: 'Archives',
+    statsCta: 'Stats',
+    copyText: 'Orarend.hu',
     siteName: 'Órarend'
   };
 
@@ -161,6 +166,17 @@ export class Or2Service {
     //newCommentObject.unshift( newC );
     this.commentObject = newCommentObject;
 
+  }
+
+
+  // kategória csere
+  classChange( ev:string ) {
+    
+    if( ev == 'private' || ev == 'work') {
+      this.languageObject.baseClassesType = ev;
+      console.log("fut", ev);
+    }
+    
   }
 
   constructor() { }

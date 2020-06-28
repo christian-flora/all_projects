@@ -1,20 +1,17 @@
-.holder{
-    text-align: center;
-}
+
 .master{
     display: inline-block;
+    padding-right: 30px;
 }
 .masterHolder{
-    color: chartreuse;
     text-align: center;
 }
 .title{
 
     width: 198px;
-    padding-top: 16px;
-    padding-bottom: 15px;
-    margin-bottom: 4px;
-    margin-right: 10px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-bottom: 21px;
     
     background-color: #fff;
     border: 2px solid #d3d2c4;
@@ -43,10 +40,22 @@
     font-size: 16px;
 
 }
+.hourHolder{
+    text-align: center;
+}
 .counter {
     display: inline-block;
 }
 .number {
     display: inline-block;
     font-weight: 700;
+}
+.addComment{
+    position: absolute;
+    right: 1;
+    top: 1;
+    margin: 0px;
+    padding: 0px;
+    display: inline;
+    text-align: right;
 }

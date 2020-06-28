@@ -7,14 +7,18 @@
 }
 .contentClass{
     padding-top: 30px;
+    vertical-align: top;
 }
+
 .hoursClass {
     display: inline-block;
     padding-right: 26px;
+    vertical-align: top;
+    margin-top: 16px;
 }
 .masterClass {
     display: inline-block;
-    padding-right: 26px;
+    vertical-align: top;
 }
 .addMasterClass {
     display: inline-block;

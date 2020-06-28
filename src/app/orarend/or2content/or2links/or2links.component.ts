@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Or2Service } from './../../services/or2.service';
 
 @Component({
   selector: 'app-or2links',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Or2linksComponent implements OnInit {
 
-  constructor() { }
+  constructor( public or2:Or2Service ) { }
 
   ngOnInit(): void {
   }

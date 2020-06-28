@@ -56,6 +56,11 @@ export interface LanguageObj {
   commentTitle:string, // megjegyzés
   commentHide:string, // megjegyzés elrejtése
   siteName:string,  // az oldal nevét tartalmazza
+  archiveCta:string,
+  statsCta:string,
+  copyText:string,
+  baseClassesA:string,
+  baseClassesB:string,
   commentViewNumber:number  // hány hozzászólás látszódjon
 
 }

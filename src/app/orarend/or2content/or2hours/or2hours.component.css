@@ -3,15 +3,15 @@
 }
 .hoursName{
     color: #a09a5c;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding-bottom: 21px;
 }
 ul {
     list-style-type: none;
     margin: 0px;
+    margin-top: 37px;
     padding: 0px;
 }
 .hourbox{

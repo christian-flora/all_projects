@@ -1,7 +1,9 @@
 <div class="holder">
     <div class="master" *ngFor="let master of this.or2.masterObject">
         <div class="title">{{master.name}}</div>
-        <div class="hour" *ngFor="let hour of master.napirend">{{hour.id}}</div>
+        <div class="hourHolder">
+            <div *ngFor="let hour of master.napirend"><div class="hour">{{hour.id}}</div> <div class="addComment">+</div></div>
+        </div>
         <div class="btn">{{this.or2.languageObject.masterDoneCta}}</div>
         <div class="counter">{{this.or2.languageObject.masterDone}} <div class="number">{{master.completed}}x</div></div>
     </div>
