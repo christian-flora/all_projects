@@ -2,7 +2,12 @@
     <div class="master" *ngFor="let master of this.or2.masterObject">
         <div class="title">{{master.name}}</div>
         <div class="hourHolder">
-            <div *ngFor="let hour of master.napirend"><div class="hour">{{hour.id}}</div> <div class="addComment">+</div></div>
+            <div *ngFor="let hour of master.napirend">
+                <div class="workClass" *ngIf="hour.type == 'work'">×</div>
+                <div class="hour" [ngClass]="{'inactiveHourBox':this.or2.hoursObject.special.includes(hour.place)}">
+                    <div class="bg">{{getClassName(hour.id)}}</div><div class="addComment"><a href="">+</a></div>
+                </div>
+            </div>
         </div>
         <div class="btn">{{this.or2.languageObject.masterDoneCta}}</div>
         <div class="counter">{{this.or2.languageObject.masterDone}} <div class="number">{{master.completed}}x</div></div>

@@ -25,19 +25,45 @@
     letter-spacing: 0px;
     
 }
+.workClass{
+    position:absolute;
+    background-color: #cac6a7;
+    border-radius: 10px;
+
+    display: inline-block;
+    width: 30px;
+    height: 26px;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 4px;
+    color: #fff;
+}
 .hour{
     
     background-color: #f5f5f5;
     border-radius: 10px;
 
+    display: inline-block;
     width: 182px;
     padding-top: 6px;
     padding-bottom: 5px;
     margin-bottom: 4px;
     
-    text-align: center;
+    text-align: right;
     color: #67612b;
     font-size: 16px;
+
+}
+.inactiveHourBox{
+
+    background-color: #fff;
+    border: 2px solid #f5f5f5;
+
+    color: #a8a8a8;
+
+    width: 178px;
+    padding-top: 4px;
+    padding-bottom: 3px;
 
 }
 .hourHolder{
@@ -51,11 +77,20 @@
     font-weight: 700;
 }
 .addComment{
-    position: absolute;
-    right: 1;
-    top: 1;
+    display: inline;
     margin: 0px;
     padding: 0px;
-    display: inline;
     text-align: right;
+    padding-right: 12px;
+    padding-left: 12px;
+    font-weight: 700;
+}
+.bg{
+    display: inline-block;
+    text-align: center;
+    width: 118px;
+    text-transform: uppercase;
+}
+a {
+    text-decoration: none;
 }

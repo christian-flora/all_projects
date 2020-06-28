@@ -80,35 +80,35 @@ export class Or2Service {
   // BEÉGETETT MESTER ÓRAREND
   // napi objektumok, ezek az alapértelmezettek, be vannak égetve
   szabadnaposObj:Napirend = [
-    {id:1001, type:"private" },
-    {id:1009, type:"private" },
-    {id:1004, type:"private" },
-    {id:1004, type:"private" },
-    {id:1004, type:"private" },
-    {id:0, type:"private" },
-    {id:0, type:"private" },
-    {id:1012, type:"private" },
-    {id:1012, type:"private" },
-    {id:1012, type:"private" },
-    {id:1002, type:"private" },
-    {id:1002, type:"private" },
-    {id:1001, type:"private" }
+    {place:'07:00', id:1001, type:"private" },
+    {place:'08:00', id:1009, type:"private" },
+    {place:'09:00', id:1004, type:"private" },
+    {place:'10:00', id:1004, type:"private" },
+    {place:'11:00', id:1004, type:"private" },
+    {place:'12:00', id:0, type:"private" },
+    {place:'13:00', id:0, type:"private" },
+    {place:'14:00', id:1012, type:"private" },
+    {place:'15:00', id:1012, type:"private" },
+    {place:'16:00', id:1012, type:"private" },
+    {place:'17:00', id:1002, type:"private" },
+    {place:'18:00', id:1002, type:"private" },
+    {place:'19:00', id:1001, type:"private" }
   ];
 
   munkanaposObj:Napirend = [
-    {id:1001, type:"work" },
-    {id:1009, type:"work" },
-    {id:1004, type:"work" },
-    {id:1004, type:"work" },
-    {id:1004, type:"work" },
-    {id:0, type:"work" },
-    {id:0, type:"work" },
-    {id:1012, type:"work" },
-    {id:1012, type:"work" },
-    {id:1012, type:"work" },
-    {id:1002, type:"work" },
-    {id:1002, type:"work" },
-    {id:1001, type:"work" }
+    {place:'07:00', id:1001, type:"work" },
+    {place:'08:00', id:1009, type:"work" },
+    {place:'09:00', id:1004, type:"work" },
+    {place:'10:00', id:1004, type:"work" },
+    {place:'11:00', id:1004, type:"work" },
+    {place:'12:00', id:0, type:"work" },
+    {place:'13:00', id:0, type:"work" },
+    {place:'14:00', id:1012, type:"work" },
+    {place:'15:00', id:1012, type:"work" },
+    {place:'16:00', id:1012, type:"work" },
+    {place:'17:00', id:1002, type:"work" },
+    {place:'18:00', id:1002, type:"work" },
+    {place:'19:00', id:1001, type:"work" }
   ];
 
   // ez tárolja a mester napokat

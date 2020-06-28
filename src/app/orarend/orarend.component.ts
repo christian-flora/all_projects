@@ -10,12 +10,13 @@ import { Component, OnInit } from '@angular/core';
 
 // master class definíciója, meglévő vagy új mester napirend használja
 export interface Napirend {
-  [index:number]:{ id:number, type:string }
+  [index:number]:{ place:string, id:number, type:string }
 }
 
 
 // kommunikációs giga tömb, az összes osztályt tárolja az osztályos megjegyzésekkel
 export interface Classes {
+  [x:string]:any;
   [index:number]: {id:number, name:string, fullName:string, nameComment:string, activity:number, type:string}
 }
 // a classesObject megjegyzéseket tárolja
