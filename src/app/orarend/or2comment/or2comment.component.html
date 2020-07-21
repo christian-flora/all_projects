@@ -2,7 +2,10 @@
     <div class="headLine">
         <div class="dateClass">{{getMyDate2()}}&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;</div><div class="nameClass">{{this.or2.languageObject.commentTitle}}:</div>
     </div>
-    <div class="commentViewClass">
+    <div 
+    class="commentViewClass"
+    [hidden]="!this.show"
+    >
         <ul 
         *ngFor="let comment of this.or2.commentObject;let i=index"
         [hidden]="false"
@@ -10,5 +13,12 @@
             <li class="liClass">{{this.or2.commentObject[i].hour}}&nbsp;&nbsp;&nbsp;—<div class="titleClass">{{this.or2.getClassesName(this.or2.commentObject[i].id)}}</div>—&nbsp;&nbsp;&nbsp;{{this.or2.commentObject[i].comment}}</li>
         </ul>
     </div>
-    <div class="hideCommentClass"><a href="" class="hideCommentClass">{{this.or2.languageObject.commentHide}}</a></div>
+    <div
+    class="hideCommentClass"
+    [hidden]="!this.show"
+    ><a class="hideCommentClass" (click)="setShow()">{{this.or2.languageObject.commentHide}}</a></div>
+    <div 
+    class="hideCommentClass"
+    [hidden]="this.show"
+    ><a class="hideCommentClass" (click)="setShow()">{{this.or2.languageObject.commentShow}}</a></div>
 </div>

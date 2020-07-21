@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Or2Service } from './services/or2.service';
 
 // todo
 // - fejlesztés: nap végén, vagy következő nap elején küldjön üzenetet ha nem lett kitöltve és eltárolva a nap, e-mailben javaslat: arra hogy üres napot rögzítek vagy link az oldalra
@@ -56,13 +57,14 @@ export interface LanguageObj {
   masterDone:string, // mester osztály ennyiszer
   commentTitle:string, // megjegyzés
   commentHide:string, // megjegyzés elrejtése
+  commentShow:string,  // fentinek a párja, a mutat
   siteName:string,  // az oldal nevét tartalmazza
   archiveCta:string,
   statsCta:string,
   copyText:string,
   baseClassesA:string,
-  baseClassesB:string,
-  commentViewNumber:number  // hány hozzászólás látszódjon
+  commentViewNumber:number,  // hány hozzászólás látszódjon
+  baseClassesB:string
 
 }
 
@@ -75,7 +77,7 @@ export interface LanguageObj {
 })
 export class OrarendComponent implements OnInit {
 
-  constructor() { }
+  constructor( public or2:Or2Service ) { }
   
   ngOnInit(): void {
     

@@ -1,19 +1,50 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Napirend, Classes, ClassesComment, Hours, HoursObj, MasterObj, LanguageObj } from './../orarend.component';
+import { HttpClient } from '@angular/common/http';
+import { empty } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class Or2Service {
+export class Or2Service implements OnInit {
+
+
+
+  
+  // todo: connect to json
+  // \{^_^}/ hi! 
+  // json-server --watch db.json --p 4400
+
+  
+  // todo: drag and drop
+  // - btn on :: surface
+  // - duplicate and position the btn abow the original btn
+  // - draggable allow on duplicated btn
+  // - check the parameters on the new btn
+  // - master time holder, ready for drop new parameters
+  // - add new style to dragd over
+  // - on release - save new parameters on the master time
+  // - delete new draggable btn
+
+  // todo: connect the master day saver "Teljesítve"
+  // - ready the new master day array
+  // - upload to json the new array on btn event
+  // - refresh the master day done counter
+
+
+  
+
   
   // EGYÉB SZÖVEGEK
-  languageObject:LanguageObj = {
+  languageObject: LanguageObj;
+  languageObject2:LanguageObj = {
     classesTitle:'Osztályok',
     classesAddNew: 'Osztály hozzáadása',
     baseClassesType: 'private', // work, private, assets (de ezt nem jelenítjük meg)
     baseClassesA: 'Magán',
     baseClassesB: 'Munka',
     commentHide: 'Elrejtés',
+    commentShow: 'Mutat',
     commentTitle: 'Megjegyzések',
     commentViewNumber: 10, // ennyi komment látszódik aktuálisan
     masterDone: 'Eddig:',
@@ -26,6 +57,7 @@ export class Or2Service {
     copyText: 'Orarend.hu',
     siteName: 'Órarend'
   };
+  inversCommentObj: LanguageObj;
 
   // FELHASZNÁLÓ
   // a felhasználó nevét tárolja el
@@ -168,6 +200,13 @@ export class Or2Service {
 
   }
 
+  allItems:number = this.commentObject.length;
+  inverzeComment() {
+    this.inversCommentObj = this.commentObject.reverse();
+    this.inversCommentObj = this.inversCommentObj.splice( this.languageObject.commentViewNumber, this.allItems );
+    console.log('most már van adat', this.inversCommentObj);
+  }
+
 
   // kategória csere
   classChange( ev:string ) {
@@ -179,10 +218,34 @@ export class Or2Service {
     
   }
 
-  constructor() { }
+  constructor( private http: HttpClient ) {
+    
+    this.getData();
 
+  }
+
+  postData() {
+    
+    const postEv = {title:'lkjlkj', author:'lajfebs'};
+    this.http.post('http://localhost:4400/posts', postEv ).subscribe( response => {console.log(response);
+    });
+
+  }
+  getData() {
+
+    this.http.get('http://localhost:4400/LanguageObj').subscribe( 
+      (response:LanguageObj) => {
+        this.languageObject = response;
+        this.inverzeComment();
+       }
+      );
+      
+  }
   consoleSomething(){
-    console.log( 'Üzenet: ');
+    //console.log( 'Üzenet: ');
+  }
+  ngOnInit() {
+    
   }
 
 }

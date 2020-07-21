@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some content",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "LanguageObj": {
+    "classesTitle": "Osztályok",
+    "classesAddNew": "Osztály hozzáadása",
+    "baseClassesType": "private",
+    "baseClassesA": "Magán",
+    "baseClassesB": "Munka",
+    "commentHide": "Elrejtés",
+    "commentShow": "Mutat",
+    "commentTitle": "Megjegyzések",
+    "commentViewNumber": 10,
+    "masterDone": "Eddig:",
+    "masterDoneCta": "Teljesítve",
+    "masterTypes": "Napirend:",
+    "userLogout": "Kijelentkezés",
+    "userSettings": "Beállítások",
+    "archiveCta": "Archives",
+    "statsCta": "Stats",
+    "copyText": "Orarend.hu",
+    "siteName": "Órarend"
+  }
+}

@@ -11,11 +11,29 @@ import { ClassesComment } from '../orarend.component';
 })
 export class Or2commentComponent implements OnInit {
 
-  constructor( public or2:Or2Service ) { }
+  constructor( public or2:Or2Service ) { 
+    
+  }
+  
   
   myDate = new Date();
   inversCommentObj:ClassesComment = [];
   allItems:number = this.or2.commentObject.length;
+  show = true;
+
+  // on service
+  // todo drag and drop
+  // - btn on :: surface
+  // - duplicate and position the btn abow the original btn
+  // - draggable allow on duplicated btn
+  // - check the parameters on the new btn
+  // - master time holder, ready for drop new parameters
+  // - add new style to dragd over
+  // - on release - save new parameters on the master time
+  // - delete new draggable btn
+
+  // - ready the new master day array
+  // - upload to json the new array on btn event
 
   getMyDate2() {
 
@@ -42,13 +60,17 @@ export class Or2commentComponent implements OnInit {
     return maDate2;
 
   }
+  setShow(){
+    return this.show = !this.show;
+  }
 
   
   ngOnInit(): void {
     
     this.inversCommentObj = this.or2.commentObject.reverse();
+    //this.inversCommentObj = this.inversCommentObj.splice( this.or2.languageObject.commentViewNumber, this.allItems );
+    //console.log("teszt: ", this.or2.languageObject );
     
-    this.inversCommentObj = this.inversCommentObj.splice( this.or2.languageObject.commentViewNumber, this.allItems );
     //console.log( this.inversCommentObj );
     //commentViewNumber
     //console.log( 'kl', this.myDate.getUTCMonth()+1, this.myDate.getUTCDate() );
