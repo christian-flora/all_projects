@@ -22,6 +22,9 @@ a:hover {
 .aclass {
     padding-top: 45px;
 }
+.bclass {
+    padding-top: 15px;
+}
 .arrow{
     display: inline;
     font-size: 17px;

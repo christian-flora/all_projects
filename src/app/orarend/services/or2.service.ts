@@ -1,14 +1,11 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Napirend, Classes, ClassesComment, Hours, HoursObj, MasterObj, LanguageObj } from './../orarend.component';
 import { HttpClient } from '@angular/common/http';
-import { empty } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class Or2Service implements OnInit {
-
-
 
   
   // todo: connect to json
@@ -16,7 +13,7 @@ export class Or2Service implements OnInit {
   // json-server --watch db.json --p 4400
 
   
-  // todo: drag and drop
+  // todo: drag and drop <- research
   // - btn on :: surface
   // - duplicate and position the btn abow the original btn
   // - draggable allow on duplicated btn
@@ -37,27 +34,6 @@ export class Or2Service implements OnInit {
   
   // EGYÉB SZÖVEGEK
   languageObject: LanguageObj;
-  languageObject2:LanguageObj = {
-    classesTitle:'Osztályok',
-    classesAddNew: 'Osztály hozzáadása',
-    baseClassesType: 'private', // work, private, assets (de ezt nem jelenítjük meg)
-    baseClassesA: 'Magán',
-    baseClassesB: 'Munka',
-    commentHide: 'Elrejtés',
-    commentShow: 'Mutat',
-    commentTitle: 'Megjegyzések',
-    commentViewNumber: 10, // ennyi komment látszódik aktuálisan
-    masterDone: 'Eddig:',
-    masterDoneCta:'Teljesítve',
-    masterTypes: 'Napirend:',
-    userLogout: 'Kijelentkezés',
-    userSettings: 'Beállítások',
-    archiveCta: 'Archives',
-    statsCta: 'Stats',
-    copyText: 'Orarend.hu',
-    siteName: 'Órarend'
-  };
-  inversCommentObj: LanguageObj;
 
   // FELHASZNÁLÓ
   // a felhasználó nevét tárolja el
@@ -152,26 +128,10 @@ export class Or2Service implements OnInit {
 
   // KOMMENTEK - a megjegyzési körök és adott napi órához
   // comment object, minden megjegyzést tartalmaz
-  commentObject:ClassesComment = [
-    { id:1004, hour:'12:22:31', comment:'Ide jön az üzi1' },
-    { id:1005, hour:'12:22:31', comment:'Ide jön az üzi2' },
-    { id:1006, hour:'12:22:31', comment:'Ide jön az üzi3' },
-    { id:1004, hour:'12:22:31', comment:'Ide jön az üzi4' },
-    { id:1007, hour:'12:22:31', comment:'Ide jön az üzi5' },
-    { id:1008, hour:'12:22:31', comment:'Ide jön az üzi6' },
-    { id:1009, hour:'12:22:31', comment:'Ide jön az üzi7' },
-    { id:1010, hour:'12:22:31', comment:'Ide jön az üzi8' },
-    { id:1004, hour:'12:22:31', comment:'Ide jön az üzi9' },
-    { id:1004, hour:'12:22:31', comment:'Ide jön az üziö' },
-    { id:1011, hour:'12:22:31', comment:'Ide jön az üzi00' },
-    { id:1004, hour:'12:22:31', comment:'Ide jön az üzi11' },
-    { id:1012, hour:'12:22:31', comment:'Ide jön az üzi12' },
-    { id:1004, hour:'12:22:31', comment:'Ide jön az üzi13' },
-    { id:1014, hour:'12:22:31', comment:'Ide jön az üzi14' },
-    { id:1004, hour:'12:22:31', comment:'Ide jön az üzi15' },
-    { id:1005, hour:'12:22:31', comment:'Ide jön az üzi16' },
-    { id:1003, hour:'12:22:31', comment:'Ide jön az üzi17' }
-  ];
+  commentObject:ClassesComment = [];
+
+  // az utolsó X (beállítástól függően) commentet tartalmazza, célja: ezt figyeli a comment component
+  inversCommentObj: ClassesComment = [];
 
   // convert the ID number to Classes name
   getClassesName( idN:number ){
@@ -200,11 +160,15 @@ export class Or2Service implements OnInit {
 
   }
 
-  allItems:number = this.commentObject.length;
+  // az összes comment számát tárolja el, inverzComment definiálásához szükséges
+  allItems:number;
+  // duplikálja, megfordítja és megfelelő hosszra állítja a commenteket
   inverzeComment() {
-    this.inversCommentObj = this.commentObject.reverse();
-    this.inversCommentObj = this.inversCommentObj.splice( this.languageObject.commentViewNumber, this.allItems );
-    console.log('most már van adat', this.inversCommentObj);
+    
+    this.allItems = this.commentObject.length;
+    this.commentObject.forEach((element: ClassesComment) => { this.inversCommentObj.push(Object.assign({}, element)) });
+    this.inversCommentObj.reverse().splice( this.languageObject.commentViewNumber, this.allItems );
+    
   }
 
 
@@ -213,7 +177,7 @@ export class Or2Service implements OnInit {
     
     if( ev == 'private' || ev == 'work') {
       this.languageObject.baseClassesType = ev;
-      console.log("fut", ev);
+      //console.log("fut", ev);
     }
     
   }
@@ -236,9 +200,14 @@ export class Or2Service implements OnInit {
     this.http.get('http://localhost:4400/LanguageObj').subscribe( 
       (response:LanguageObj) => {
         this.languageObject = response;
-        this.inverzeComment();
        }
       );
+      this.http.get('http://localhost:4400/comments').subscribe( 
+        (response:ClassesComment) => {
+          this.commentObject = response;
+          this.inverzeComment();
+         }
+        );
       
   }
   consoleSomething(){

@@ -7,10 +7,10 @@
     [hidden]="!this.show"
     >
         <ul 
-        *ngFor="let comment of this.or2.commentObject;let i=index"
+        *ngFor="let comment of this.or2.inversCommentObj;let i=index"
         [hidden]="false"
         class="ulClass">
-            <li class="liClass">{{this.or2.commentObject[i].hour}}&nbsp;&nbsp;&nbsp;—<div class="titleClass">{{this.or2.getClassesName(this.or2.commentObject[i].id)}}</div>—&nbsp;&nbsp;&nbsp;{{this.or2.commentObject[i].comment}}</li>
+            <li class="liClass">{{this.or2.inversCommentObj[i].hour}}&nbsp;&nbsp;&nbsp;—<div class="titleClass">{{this.or2.getClassesName(this.or2.inversCommentObj[i].ids)}}</div>—&nbsp;&nbsp;&nbsp;{{this.or2.inversCommentObj[i].comment}}</li>
         </ul>
     </div>
     <div

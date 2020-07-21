@@ -23,7 +23,7 @@ export interface Classes {
 // a classesObject megjegyzéseket tárolja
 export interface ClassesComment {
   [x: string]: any;
-  [index:number] : {id:number, hour:string, comment:string}
+  [index:number] : {id?:number, ids:number, hour:string, comment:string}
 }
 
 

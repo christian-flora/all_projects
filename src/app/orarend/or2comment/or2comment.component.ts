@@ -17,8 +17,8 @@ export class Or2commentComponent implements OnInit {
   
   
   myDate = new Date();
-  inversCommentObj:ClassesComment = [];
-  allItems:number = this.or2.commentObject.length;
+  //inversCommentObj:ClassesComment = [];
+  //allItems:number = this.or2.commentObject.length;
   show = true;
 
   // on service
@@ -67,7 +67,7 @@ export class Or2commentComponent implements OnInit {
   
   ngOnInit(): void {
     
-    this.inversCommentObj = this.or2.commentObject.reverse();
+    //this.inversCommentObj = this.or2.commentObject.reverse();
     //this.inversCommentObj = this.inversCommentObj.splice( this.or2.languageObject.commentViewNumber, this.allItems );
     //console.log("teszt: ", this.or2.languageObject );
     
