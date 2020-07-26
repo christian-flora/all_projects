@@ -29,7 +29,27 @@ export class Or2Service implements OnInit {
   // - refresh the master day done counter
 
 
-  
+  // hibalista:
+  // x commentek száma: szerver indítást követő első megjelenítés hibásan jeleníti meg 
+  //   a commentek számát
+  // - commentek száma: össze kell kötni a lekérést hogy egyszerre legyen meg az információ
+
+
+
+
+
+  // órarend működés:
+  //
+  // a célom hogy a napomat beosszam, és lássam hogy eggyes osztályokkal
+  // (1 osztályt 1 foglalkozási körnek kell tekinteni) mennyit foglalkozom.
+  // a munka másod fontosságú, ugyanis én állok a középpontban, és én végzem el.
+  // a következő képpen kell elképzelni: 
+  // "A oszlop" - általam fontosnak tartott dolgok, "B oszlop" - munka, és az A ráfolyhat a B-re vagy fordítva
+  //
+  // munkanapos master: 
+  //    azt feltételezem hogy dolgoznom kellene, de cserébe inkább a magán dolgaimat csinálom
+  //    így az adott órát X-elem ki amikor nem tudtam a maszekkal foglalkozni :D
+  //    cél hogy saját lábon álljak és a munkát is egy megrenddelőként kell tekinteni
 
   
   // EGYÉB SZÖVEGEK
@@ -167,8 +187,11 @@ export class Or2Service implements OnInit {
     
     this.allItems = this.commentObject.length;
     this.commentObject.forEach((element: ClassesComment) => { this.inversCommentObj.push(Object.assign({}, element)) });
+    this.cutComment();
+
+  }
+  cutComment() {
     this.inversCommentObj.reverse().splice( this.languageObject.commentViewNumber, this.allItems );
-    
   }
 
 
@@ -200,14 +223,18 @@ export class Or2Service implements OnInit {
     this.http.get('http://localhost:4400/LanguageObj').subscribe( 
       (response:LanguageObj) => {
         this.languageObject = response;
+          this.cutComment();
+
+        // ha megvan a langObj-t akkor indulhat a comment halászat
+        this.http.get('http://localhost:4400/comments').subscribe( 
+          (response:ClassesComment) => {
+            this.commentObject = response;
+            this.inverzeComment();
+          }
+          );
+
        }
       );
-      this.http.get('http://localhost:4400/comments').subscribe( 
-        (response:ClassesComment) => {
-          this.commentObject = response;
-          this.inverzeComment();
-         }
-        );
       
   }
   consoleSomething(){
