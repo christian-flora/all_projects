@@ -23,6 +23,9 @@ export class Or2Service implements OnInit {
   // - on release - save new parameters on the master time
   // - delete new draggable btn
 
+  // - json-ből masterek adatait lekérni, majd kiegészíteni a mentett állományt a nevekkel
+  // - Napirend ki lett egészítve egy name? változóval ami eltárolja a jövőben a nevet 
+
   // todo: connect the master day saver "Teljesítve"
   // - ready the new master day array
   // - upload to json the new array on btn event
@@ -33,6 +36,7 @@ export class Or2Service implements OnInit {
   // x commentek száma: szerver indítást követő első megjelenítés hibásan jeleníti meg 
   //   a commentek számát
   // - commentek száma: össze kell kötni a lekérést hogy egyszerre legyen meg az információ
+  //   jelenleg sorba van kötve (lekéri langObj-et majd a comment obj)
 
 
 
@@ -65,11 +69,14 @@ export class Or2Service implements OnInit {
 
   // ÓRA KEZELÉS
   // nagyon fontos, ez irányítja az aktív órák számát
-  hoursActive:Hours = ['07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00'];
+  hoursActive:Hours = [];
+  hoursActive2:Hours = ['07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00'];
   // napi hivatalos inaktív órák
-  hoursSpecial:Hours = ['12:00', '13:00', '18:00'];
+  hoursSpecial:Hours = [];
+  hoursSpecial2:Hours = ['12:00', '13:00', '18:00'];
   // napi hivatalos munkaórák
-  hoursWorking:Hours = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'];
+  hoursWorking:Hours = [];
+  hoursWorking2:Hours = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'];
 
   // összesíti az órákkal kapcsolatos változókat, hogy könnyebb legyen a kommunikáció
   hoursObject:HoursObj = {
@@ -81,66 +88,18 @@ export class Or2Service implements OnInit {
 
   // FOGLALKOZÁSI KÖRÖK
   // nagyon fontos ez vezérli az osztályokat, tartalmazza még a heti aktivitást, rövidített nevet és a rövid leírást
-  classesObject:Classes = [
-    // beégetett id 1000 alatti, működéshez használt
-    { id:0, name:'---', fullName:'Dokumentálatlan idő', nameComment:'igazi lustiidő', activity: 0, type:"assets" },
-    { id:1, name:'Húzd ide', fullName:'Alapértelmezetten üres foglalkozás', nameComment:'Kitöltésre vár', activity: 0, type:"assets" },
-    // manuálisan létrehozott foglalkozási és munka óra típusok
-    { id:1001, name:'Tesi', fullName:'Testnevelés', nameComment:'Fontos a napi rendszeres mozgás', activity: 3, type:"private" },
-    { id:1002, name:'Fotózás', fullName:'Fotózás fejlesztés', nameComment:'Fotózással kapcsolatos önfejlesztés', activity: 0, type:"private" },
-    { id:1003, name:'CSS', fullName:'Cascading Style Sheets tanulás', nameComment:'CSS-el kapcsolatos önfejlesztés', activity: 3, type:"private" },
-    { id:1004, name:'Angular', fullName:'Angular tanulás', nameComment:'Angular rendszer kiismerése', activity: 3, type:"private" },
-    { id:1005, name:'JS', fullName:'JavaScript tanulás', nameComment:'JS ismeretek önfejlesztése', activity: 3, type:"private" },
-    { id:1006, name:'Animáció', fullName:'Animációs látásmód fejlesztés', nameComment:'Animációs látásmód fejlesztése', activity: 3, type:"private" },
-    { id:1007, name:'HTML', fullName:'HTML tanulás', nameComment:'HTLM ismeretek fejlesztése', activity: 3, type:"private" },
-    { id:1008, name:'Céges Dolgok', fullName:'Hivatalos feladatok', nameComment:'Céggel kapcsolatos feladatok', activity: 3, type:"private" },
-    { id:1009, name:'Webdesign', fullName:'Honlap tervezés', nameComment:'Digitális megjelenés látásmódjának a fejlesztése', activity: 3, type:"private" },
-    { id:1010, name:'Tipográfia', fullName:'Tipográfia gyakorlása', nameComment:'Kommunikációs hierarchia megjelenítése', activity: 3, type:"private" },
-    { id:1011, name:'Fotóretusálás', fullName:'Fotóretusálás gyakorlása', nameComment:'Fotók megjelenítésének a feljavítása', activity: 3, type:"private" },
-    { id:1012, name:'Angol', fullName:'Angol nyelvtanulás', nameComment:'Angol nyelv tanulása', activity: 3, type:"private" },
-    { id:1013, name:'Montázs', fullName:'Képek Montázsolása', nameComment:'Több kép összevágása hogy egy új képet alkosson', activity: 3, type:"private" },
-    { id:1014, name:'Kalligráfia', fullName:'Kalligráfia gyakorlás', nameComment:'Kézírás fejlesztés', activity: 3, type:"private" },
-    { id:1015, name:'Munka keresés', fullName:'Állás és Munka keresés', nameComment:'Új állás és munka keresés', activity: 3, type:"private" },
-    { id:1016, name:'Sommersby', fullName:'Februári bannerek', nameComment:'6 méretben mutálandó, 640x360, 970x250...', activity: 3, type:"work" }
-  ];
+  classesObject:Classes;
 
 
   // BEÉGETETT MESTER ÓRAREND
   // napi objektumok, ezek az alapértelmezettek, be vannak égetve
-  szabadnaposObj:Napirend = [
-    {place:'07:00', id:1001, type:"private" },
-    {place:'08:00', id:1009, type:"private" },
-    {place:'09:00', id:1004, type:"private" },
-    {place:'10:00', id:1004, type:"private" },
-    {place:'11:00', id:1004, type:"private" },
-    {place:'12:00', id:0, type:"private" },
-    {place:'13:00', id:0, type:"private" },
-    {place:'14:00', id:1012, type:"private" },
-    {place:'15:00', id:1012, type:"private" },
-    {place:'16:00', id:1012, type:"private" },
-    {place:'17:00', id:1002, type:"private" },
-    {place:'18:00', id:1002, type:"private" },
-    {place:'19:00', id:1001, type:"private" }
-  ];
+  szabadnaposObj:Napirend;
 
-  munkanaposObj:Napirend = [
-    {place:'07:00', id:1001, type:"work" },
-    {place:'08:00', id:1009, type:"work" },
-    {place:'09:00', id:1004, type:"work" },
-    {place:'10:00', id:1004, type:"work" },
-    {place:'11:00', id:1004, type:"work" },
-    {place:'12:00', id:0, type:"work" },
-    {place:'13:00', id:0, type:"work" },
-    {place:'14:00', id:1012, type:"work" },
-    {place:'15:00', id:1012, type:"work" },
-    {place:'16:00', id:1012, type:"work" },
-    {place:'17:00', id:1002, type:"work" },
-    {place:'18:00', id:1002, type:"work" },
-    {place:'19:00', id:1001, type:"work" }
-  ];
+  munkanaposObj:Napirend;
 
   // ez tárolja a mester napokat
-  masterObject:MasterObj = [
+  masterObject:MasterObj;
+  masterObject2:MasterObj = [
     {name:'Szabadnapos', napirend:this.szabadnaposObj, completed:1 },
     {name:'Munkanapos', napirend:this.munkanaposObj, completed:0 }
   ];
@@ -223,22 +182,80 @@ export class Or2Service implements OnInit {
     this.http.get('http://localhost:4400/LanguageObj').subscribe( 
       (response:LanguageObj) => {
         this.languageObject = response;
-          this.cutComment();
 
-        // ha megvan a langObj-t akkor indulhat a comment halászat
-        this.http.get('http://localhost:4400/comments').subscribe( 
-          (response:ClassesComment) => {
-            this.commentObject = response;
-            this.inverzeComment();
-          }
-          );
+        // jöhet a classesObj
+        this.http.get('http://localhost:4400/classesObject').subscribe( 
+          (response:Classes) => {
+          this.classesObject = response;
+          
+          // ha megvan a langObj-t akkor indulhat a comment halászat
+          this.http.get('http://localhost:4400/comments').subscribe( 
+            (response:ClassesComment) => {
+              this.commentObject = response;
+              this.inverzeComment();
 
-       }
-      );
+              this.http.get('http://localhost:4400/szabadnaposObj').subscribe( 
+                (response:Napirend) => { 
+                  this.szabadnaposObj = response;
+                  // hozzá kell csapni a nevet
+                  
+                  this.http.get('http://localhost:4400/munkanaposObj').subscribe( 
+                    (response:Napirend) => { 
+                      this.munkanaposObj = response;
+                      // hozzá kell csapni a nevet
+
+                      this.http.get('http://localhost:4400/masterObject').subscribe( 
+                        (response:MasterObj) => {
+                          this.masterObject = response;
+
+                          this.http.get('http://localhost:4400/hoursActive').subscribe( 
+                            (response:{id:number, name:string}) => {
+                              //this.hoursActive 
+                              this.convertHours(this.hoursActive, response );
+
+                              this.http.get('http://localhost:4400/hoursSpecial').subscribe( 
+                                (response:{id:number, name:string}) => {
+                                  this.convertHours(this.hoursSpecial, response );
+
+                                  this.http.get('http://localhost:4400/hoursWorking').subscribe( 
+                                    (response:{id:number, name:string}) => {
+                                      this.convertHours(this.hoursWorking, response );
+
+                                      console.log(this.hoursObject);
+                                      
+                                  } );
+
+                                } );
+
+                          } );
+
+                      } );
+
+                  } );
+                  
+              } );
+
+          } );
+
+        } );
+
+    } );
       
+  }
+  convertHours( hova:Hours, mit:any ){
+    
+    // lehet hogy üríteni kell a "hova" értékét...
+    //hova = [];
+    mit.forEach( (element:{id:number, name:string}) => { hova.push(element.name) });
+    //console.log("hours", hova );
+
   }
   consoleSomething(){
     //console.log( 'Üzenet: ');
+  }
+  
+  getClassName( ev:number ){
+    return this.classesObject.filter( (u: { id: number; }) => u.id == ev )[0].name;
   }
   ngOnInit() {
     
