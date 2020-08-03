@@ -13,7 +13,7 @@ export class Or2masterComponent implements OnInit {
   getClassName( ev:number ){
     //return this.or2.classesObject.filter( (u: { id: number; }) => u.id == ev )[0].name;
   }
-
+  console = console;
   ngOnInit(): void {
     //console.log("fut" );
     

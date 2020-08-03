@@ -93,13 +93,13 @@ export class Or2Service implements OnInit {
 
   // BEÉGETETT MESTER ÓRAREND
   // napi objektumok, ezek az alapértelmezettek, be vannak égetve
-  szabadnaposObj:Napirend;
+  szabadnaposObj:Napirend = [];
 
-  munkanaposObj:Napirend;
+  munkanaposObj:Napirend = [];
 
   // ez tárolja a mester napokat
-  masterObject:MasterObj;
-  masterObject2:MasterObj = [
+  //masterObject:MasterObj;
+  masterObject:MasterObj = [
     {name:'Szabadnapos', napirend:this.szabadnaposObj, completed:1 },
     {name:'Munkanapos', napirend:this.munkanaposObj, completed:0 }
   ];
@@ -197,16 +197,24 @@ export class Or2Service implements OnInit {
               this.http.get('http://localhost:4400/szabadnaposObj').subscribe( 
                 (response:Napirend) => { 
                   this.szabadnaposObj = response;
+                  this.convertMaster('Szabadnapos');
+                  //this.masterObject[0].napirend = response;
                   // hozzá kell csapni a nevet
+                  // ezt és a következő lépést sokszorosítani kell majd
+                  // ahány master napunk van
                   
                   this.http.get('http://localhost:4400/munkanaposObj').subscribe( 
                     (response:Napirend) => { 
                       this.munkanaposObj = response;
+                      this.convertMaster('Munkanapos');
+                      //this.masterObject[1].napirend = response;
                       // hozzá kell csapni a nevet
 
                       this.http.get('http://localhost:4400/masterObject').subscribe( 
                         (response:MasterObj) => {
-                          this.masterObject = response;
+                          //this.masterObject = response;
+                          // ezzel később foglalkozom,
+                          // ha új masternapot hozok majd létre
 
                           this.http.get('http://localhost:4400/hoursActive').subscribe( 
                             (response:{id:number, name:string}) => {
@@ -221,7 +229,9 @@ export class Or2Service implements OnInit {
                                     (response:{id:number, name:string}) => {
                                       this.convertHours(this.hoursWorking, response );
 
-                                      console.log(this.hoursObject);
+                                      //console.log(this.hoursObject);
+                                      //console.log( 'most ', this.masterObject[0].napirend);
+                                      
                                       
                                   } );
 
@@ -242,6 +252,36 @@ export class Or2Service implements OnInit {
     } );
       
   }
+  convertMaster( nev:string ){
+
+    //console.log('selkj', this.szabadnaposObj);
+    if ( nev == 'Szabadnapos'){
+      
+      // szabadnapos másolás masterobj helyre
+      this.szabadnaposObj.forEach( (element:Napirend) => { 
+
+        this.masterObject[0].napirend.push(element);
+        let hanyadik:number = this.masterObject[0].napirend.length - 1;
+        this.masterObject[0].napirend[hanyadik].name = this.getClassName( this.masterObject[0].napirend[hanyadik].ids );
+        
+      });
+      
+      // tömb bővítés, name értékkel
+      //console.log('csekk', this.masterObject[0].napirend);
+      
+    } else if( nev == 'Munkanapos'){
+      //this.munkanaposObj
+      this.masterObject[1].napirend
+      this.munkanaposObj.forEach( (element:Napirend) => { 
+
+        this.masterObject[1].napirend.push(element);
+        let hanyadik:number = this.masterObject[1].napirend.length - 1;
+        this.masterObject[1].napirend[hanyadik].name = this.getClassName( this.masterObject[1].napirend[hanyadik].ids );
+        
+      });
+    }
+    
+  }
   convertHours( hova:Hours, mit:any ){
     
     // lehet hogy üríteni kell a "hova" értékét...
@@ -255,7 +295,10 @@ export class Or2Service implements OnInit {
   }
   
   getClassName( ev:number ){
-    return this.classesObject.filter( (u: { id: number; }) => u.id == ev )[0].name;
+    
+    //console.log('itt', ev, this.classesObject.filter( (u: { id: number }) => u.ids == ev ));
+    return this.classesObject.filter( (u: { ids: number; }) => u.ids == ev )[0].name;
+    
   }
   ngOnInit() {
     

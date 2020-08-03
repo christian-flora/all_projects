@@ -11,7 +11,8 @@ import { Or2Service } from './services/or2.service';
 
 // master class definíciója, meglévő vagy új mester napirend használja
 export interface Napirend {
-  [index:number]:{ place:string, id:number, type:string, name?:string }
+  [x:string]: any;
+  [index:number]:{ place:string, id:number, ids:number, type:string, name?:string }
 }
 
 
