@@ -58,6 +58,23 @@ export class Or2Service implements OnInit {
   
   // EGYÉB SZÖVEGEK
   languageObject: LanguageObj;
+  siteName:string = '';
+  masterTypes:string = '';
+  masterDoneCta:string = '';
+  masterDone:string = '';
+  archiveCta:string = '';
+  statsCta:string = '';
+  copyText:string = '';
+  userSettings:string = '';
+  userLogout:string = '';
+  commentTitle:string = '';
+  commentHide:string = '';
+  commentShow:string = '';
+  baseClassesB:string = '';
+  baseClassesA:string = '';
+  classesAddNew:string = '';
+  classesTitle:string = '';
+  baseClassesType:string = '';
 
   // FELHASZNÁLÓ
   // a felhasználó nevét tárolja el
@@ -94,8 +111,10 @@ export class Or2Service implements OnInit {
   // BEÉGETETT MESTER ÓRAREND
   // napi objektumok, ezek az alapértelmezettek, be vannak égetve
   szabadnaposObj:Napirend = [];
+  szabadnaposCounter:number = 0;
 
   munkanaposObj:Napirend = [];
+  munkanaposCounter:number = 0;
 
   // ez tárolja a mester napokat
   //masterObject:MasterObj;
@@ -151,6 +170,8 @@ export class Or2Service implements OnInit {
   }
   cutComment() {
     this.inversCommentObj.reverse().splice( this.languageObject.commentViewNumber, this.allItems );
+    this.inversCommentObj.forEach((element: ClassesComment) => { element.name = this.getClassName(element.ids); });
+    //this.inversCommentObj.push(Object.assign({}, element))
   }
 
 
@@ -158,7 +179,7 @@ export class Or2Service implements OnInit {
   classChange( ev:string ) {
     
     if( ev == 'private' || ev == 'work') {
-      this.languageObject.baseClassesType = ev;
+      this.baseClassesType = ev;
       //console.log("fut", ev);
     }
     
@@ -182,6 +203,23 @@ export class Or2Service implements OnInit {
     this.http.get('http://localhost:4400/LanguageObj').subscribe( 
       (response:LanguageObj) => {
         this.languageObject = response;
+        this.siteName = this.languageObject.siteName;
+        this.masterTypes = this.languageObject.masterTypes;
+        this.masterDoneCta = this.languageObject.masterDoneCta;
+        this.masterDone = this.languageObject.masterDone;
+        this.archiveCta = this.languageObject.archiveCta;
+        this.statsCta = this.languageObject.statsCta;
+        this.copyText = this.languageObject.copyText;
+        this.userSettings = this.languageObject.userSettings;
+        this.userLogout = this.languageObject.userLogout;
+        this.commentTitle = this.languageObject.commentTitle;
+        this.commentHide = this.languageObject.commentHide;
+        this.commentShow = this.languageObject.commentShow;
+        this.baseClassesB = this.languageObject.baseClassesB;
+        this.baseClassesA = this.languageObject.baseClassesA;
+        this.classesAddNew = this.languageObject.classesAddNew;
+        this.classesTitle = this.languageObject.classesTitle;
+        this.baseClassesType = this.languageObject.baseClassesType;
 
         // jöhet a classesObj
         this.http.get('http://localhost:4400/classesObject').subscribe( 
@@ -198,8 +236,6 @@ export class Or2Service implements OnInit {
                 (response:Napirend) => { 
                   this.szabadnaposObj = response;
                   this.convertMaster('Szabadnapos');
-                  //this.masterObject[0].napirend = response;
-                  // hozzá kell csapni a nevet
                   // ezt és a következő lépést sokszorosítani kell majd
                   // ahány master napunk van
                   
@@ -213,8 +249,10 @@ export class Or2Service implements OnInit {
                       this.http.get('http://localhost:4400/masterObject').subscribe( 
                         (response:MasterObj) => {
                           //this.masterObject = response;
-                          // ezzel később foglalkozom,
+                          this.szabadnaposCounter = response[0].completed;
+                          this.munkanaposCounter = response[1].completed;
                           // ha új masternapot hozok majd létre
+                          // ezeket dinamikussá kell tenni
 
                           this.http.get('http://localhost:4400/hoursActive').subscribe( 
                             (response:{id:number, name:string}) => {

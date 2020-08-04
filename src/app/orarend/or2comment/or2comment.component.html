@@ -1,6 +1,6 @@
 <div class="commentClass">
     <div class="headLine">
-        <div class="dateClass">{{getMyDate2()}}&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;</div><div class="nameClass">{{this.or2.languageObject.commentTitle}}:</div>
+        <div class="dateClass">{{getMyDate2()}}&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;</div><div class="nameClass">{{this.or2.commentTitle}}:</div>
     </div>
     <div 
     class="commentViewClass"
@@ -10,15 +10,15 @@
         *ngFor="let comment of this.or2.inversCommentObj;let i=index"
         [hidden]="false"
         class="ulClass">
-            <li class="liClass">{{this.or2.inversCommentObj[i].hour}}&nbsp;&nbsp;&nbsp;—<div class="titleClass">{{this.or2.getClassesName(this.or2.inversCommentObj[i].ids)}}</div>—&nbsp;&nbsp;&nbsp;{{this.or2.inversCommentObj[i].comment}}</li>
+            <li class="liClass">{{this.or2.inversCommentObj[i].hour}}&nbsp;&nbsp;&nbsp;—<div class="titleClass">{{this.or2.inversCommentObj[i].name}}</div>—&nbsp;&nbsp;&nbsp;{{this.or2.inversCommentObj[i].comment}}</li>
         </ul>
     </div>
     <div
     class="hideCommentClass"
     [hidden]="!this.show"
-    ><a class="hideCommentClass" (click)="setShow()">{{this.or2.languageObject.commentHide}}</a></div>
+    ><a class="hideCommentClass" (click)="setShow()">{{this.or2.commentHide}}</a></div>
     <div 
     class="hideCommentClass"
     [hidden]="this.show"
-    ><a class="hideCommentClass" (click)="setShow()">{{this.or2.languageObject.commentShow}}</a></div>
+    ><a class="hideCommentClass" (click)="setShow()">{{this.or2.commentShow}}</a></div>
 </div>
