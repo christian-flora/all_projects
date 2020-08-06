@@ -4,112 +4,584 @@
       "id": 1,
       "title": "json-server",
       "author": "typicode"
+    },
+    {
+      "title": "lkjlkj",
+      "author": "lajfebs",
+      "id": 2
     }
   ],
   "comments": [
-    { "id":0, "ids":1004, "hour":"12:22:31", "comment":"Ide jön az üzi1" },
-    { "id":1, "ids":1005, "hour":"12:22:32", "comment":"Ide jön az üzi2" },
-    { "id":2, "ids":1006, "hour":"12:22:33", "comment":"Ide jön az üzi3" },
-    { "id":3, "ids":1004, "hour":"12:22:34", "comment":"Ide jön az üzi4" },
-    { "id":4, "ids":1007, "hour":"12:22:35", "comment":"Ide jön az üzi5" },
-    { "id":5, "ids":1008, "hour":"12:22:36", "comment":"Ide jön az üzi6" },
-    { "id":6, "ids":1009, "hour":"12:22:37", "comment":"Ide jön az üzi7" },
-    { "id":7, "ids":1010, "hour":"12:22:38", "comment":"Ide jön az üzi8" },
-    { "id":8, "ids":1004, "hour":"12:22:39", "comment":"Ide jön az üzi9" },
-    { "id":9, "ids":1004, "hour":"12:22:40", "comment":"Ide jön az üziö" },
-    { "id":10, "ids":1011, "hour":"12:22:41", "comment":"Ide jön az üzi00" },
-    { "id":11, "ids":1004, "hour":"12:22:42", "comment":"Ide jön az üzi11" },
-    { "id":12, "ids":1012, "hour":"12:22:43", "comment":"Ide jön az üzi12" },
-    { "id":13, "ids":1004, "hour":"12:22:44", "comment":"Ide jön az üzi13" },
-    { "id":14, "ids":1014, "hour":"12:22:45", "comment":"Ide jön az üzi14" },
-    { "id":15, "ids":1004, "hour":"12:22:46", "comment":"Ide jön az üzi15" },
-    { "id":16, "ids":1005, "hour":"12:22:47", "comment":"Ide jön az üzi16" },
-    { "id":17, "ids":1003, "hour":"12:22:48", "comment":"Ide jön az üzi17" }
+    {
+      "id": 0,
+      "ids": 1004,
+      "hour": "12:22:31",
+      "comment": "Ide jön az üzi1",
+      "commentDate": "2020.08.06"
+    },
+    {
+      "id": 1,
+      "ids": 1005,
+      "hour": "12:22:32",
+      "comment": "Ide jön az üzi2",
+      "commentDate": "2020.08.06"
+    },
+    {
+      "id": 2,
+      "ids": 1006,
+      "hour": "12:22:33",
+      "comment": "Ide jön az üzi3",
+      "commentDate": "2020.08.06"
+    },
+    {
+      "id": 3,
+      "ids": 1004,
+      "hour": "12:22:34",
+      "comment": "Ide jön az üzi4",
+      "commentDate": "2020.08.06"
+    },
+    {
+      "id": 4,
+      "ids": 1007,
+      "hour": "12:22:35",
+      "comment": "Ide jön az üzi5",
+      "commentDate": "2020.08.06"
+    },
+    {
+      "id": 5,
+      "ids": 1008,
+      "hour": "12:22:36",
+      "comment": "Ide jön az üzi6",
+      "commentDate": "2020.08.06"
+    },
+    {
+      "id": 6,
+      "ids": 1009,
+      "hour": "12:22:37",
+      "comment": "Ide jön az üzi7",
+      "commentDate": "2020.08.06"
+    },
+    {
+      "id": 7,
+      "ids": 1010,
+      "hour": "12:22:38",
+      "comment": "Ide jön az üzi8",
+      "commentDate": "2020.08.06"
+    },
+    {
+      "id": 8,
+      "ids": 1004,
+      "hour": "12:22:39",
+      "comment": "Ide jön az üzi9",
+      "commentDate": "2020.08.06"
+    },
+    {
+      "id": 9,
+      "ids": 1004,
+      "hour": "12:22:40",
+      "comment": "Ide jön az üziö",
+      "commentDate": "2020.08.06"
+    },
+    {
+      "id": 10,
+      "ids": 1011,
+      "hour": "12:22:41",
+      "comment": "Ide jön az üzi00",
+      "commentDate": "2020.08.06"
+    },
+    {
+      "id": 11,
+      "ids": 1004,
+      "hour": "12:22:42",
+      "comment": "Ide jön az üzi11",
+      "commentDate": "2020.08.06"
+    },
+    {
+      "id": 12,
+      "ids": 1012,
+      "hour": "12:22:43",
+      "comment": "Ide jön az üzi12",
+      "commentDate": "2020.08.06"
+    },
+    {
+      "id": 13,
+      "ids": 1004,
+      "hour": "12:22:44",
+      "comment": "Ide jön az üzi13",
+      "commentDate": "2020.08.06"
+    },
+    {
+      "id": 14,
+      "ids": 1014,
+      "hour": "12:22:45",
+      "comment": "Ide jön az üzi14",
+      "commentDate": "2020.08.06"
+    },
+    {
+      "id": 15,
+      "ids": 1004,
+      "hour": "12:22:46",
+      "comment": "Ide jön az üzi15",
+      "commentDate": "2020.08.06"
+    },
+    {
+      "id": 16,
+      "ids": 1005,
+      "hour": "12:22:47",
+      "comment": "Ide jön az üzi16",
+      "commentDate": "2020.08.06"
+    },
+    {
+      "id": 17,
+      "ids": 1003,
+      "hour": "12:22:48",
+      "comment": "Ide jön az üzi17",
+      "commentDate": "2020.08.06"
+    }
   ],
   "classesObject": [
-    { "id":0, "ids":0, "name":"---", "fullName":"Dokumentálatlan idő", "nameComment":"igazi lustiidő", "activity": 0, "type":"assets" },
-    { "id":1, "ids":1, "name":"Húzd ide", "fullName":"Alapértelmezetten üres foglalkozás", "nameComment":"Kitöltésre vár", "activity": 0, "type":"assets" },
-    { "id":2, "ids":1001, "name":"Tesi", "fullName":"Testnevelés", "nameComment":"Fontos a napi rendszeres mozgás", "activity": 3, "type":"private" },
-    { "id":3, "ids":1002, "name":"Fotózás", "fullName":"Fotózás fejlesztés", "nameComment":"Fotózással kapcsolatos önfejlesztés", "activity": 0, "type":"private" },
-    { "id":4, "ids":1003, "name":"CSS", "fullName":"Cascading Style Sheets tanulás", "nameComment":"CSS-el kapcsolatos önfejlesztés", "activity": 3, "type":"private" },
-    { "id":5, "ids":1004, "name":"Angular", "fullName":"Angular tanulás", "nameComment":"Angular rendszer kiismerése", "activity": 3, "type":"private" },
-    { "id":6, "ids":1005, "name":"JS", "fullName":"JavaScript tanulás", "nameComment":"JS ismeretek önfejlesztése", "activity": 3, "type":"private" },
-    { "id":7, "ids":1006, "name":"Animáció", "fullName":"Animációs látásmód fejlesztés", "nameComment":"Animációs látásmód fejlesztése", "activity": 3, "type":"private" },
-    { "id":8, "ids":1007, "name":"HTML", "fullName":"HTML tanulás", "nameComment":"HTLM ismeretek fejlesztése", "activity": 3, "type":"private" },
-    { "id":9, "ids":1008, "name":"Céges Dolgok", "fullName":"Hivatalos feladatok", "nameComment":"Céggel kapcsolatos feladatok", "activity": 3, "type":"private" },
-    { "id":10, "ids":1009, "name":"Webdesign", "fullName":"Honlap tervezés", "nameComment":"Digitális megjelenés látásmódjának a fejlesztése", "activity": 3, "type":"private" },
-    { "id":11, "ids":1010, "name":"Tipográfia", "fullName":"Tipográfia gyakorlása", "nameComment":"Kommunikációs hierarchia megjelenítése", "activity": 3, "type":"private" },
-    { "id":12, "ids":1011, "name":"Fotóretusálás", "fullName":"Fotóretusálás gyakorlása", "nameComment":"Fotók megjelenítésének a feljavítása", "activity": 3, "type":"private" },
-    { "id":13, "ids":1012, "name":"Angol", "fullName":"Angol nyelvtanulás", "nameComment":"Angol nyelv tanulása", "activity": 3, "type":"private" },
-    { "id":14, "ids":1013, "name":"Montázs", "fullName":"Képek Montázsolása", "nameComment":"Több kép összevágása hogy egy új képet alkosson", "activity": 3, "type":"private" },
-    { "id":15, "ids":1014, "name":"Kalligráfia", "fullName":"Kalligráfia gyakorlás", "nameComment":"Kézírás fejlesztés", "activity": 3, "type":"private" },
-    { "id":16, "ids":1015, "name":"Munka keresés", "fullName":"Állás és Munka keresés", "nameComment":"Új állás és munka keresés", "activity": 3, "type":"private" },
-    { "id":17, "ids":1016, "name":"Sommersby", "fullName":"Februári bannerek", "nameComment":"6 méretben mutálandó, 640x360, 970x250...", "activity": 3, "type":"work" }
+    {
+      "id": 0,
+      "ids": 0,
+      "name": "---",
+      "fullName": "Dokumentálatlan idő",
+      "nameComment": "igazi lustiidő",
+      "activity": 0,
+      "type": "assets"
+    },
+    {
+      "id": 1,
+      "ids": 1,
+      "name": "Húzd ide",
+      "fullName": "Alapértelmezetten üres foglalkozás",
+      "nameComment": "Kitöltésre vár",
+      "activity": 0,
+      "type": "assets"
+    },
+    {
+      "id": 2,
+      "ids": 1001,
+      "name": "Tesi",
+      "fullName": "Testnevelés",
+      "nameComment": "Fontos a napi rendszeres mozgás",
+      "activity": 3,
+      "type": "private"
+    },
+    {
+      "id": 3,
+      "ids": 1002,
+      "name": "Fotózás",
+      "fullName": "Fotózás fejlesztés",
+      "nameComment": "Fotózással kapcsolatos önfejlesztés",
+      "activity": 0,
+      "type": "private"
+    },
+    {
+      "id": 4,
+      "ids": 1003,
+      "name": "CSS",
+      "fullName": "Cascading Style Sheets tanulás",
+      "nameComment": "CSS-el kapcsolatos önfejlesztés",
+      "activity": 3,
+      "type": "private"
+    },
+    {
+      "id": 5,
+      "ids": 1004,
+      "name": "Angular",
+      "fullName": "Angular tanulás",
+      "nameComment": "Angular rendszer kiismerése",
+      "activity": 3,
+      "type": "private"
+    },
+    {
+      "id": 6,
+      "ids": 1005,
+      "name": "JS",
+      "fullName": "JavaScript tanulás",
+      "nameComment": "JS ismeretek önfejlesztése",
+      "activity": 3,
+      "type": "private"
+    },
+    {
+      "id": 7,
+      "ids": 1006,
+      "name": "Animáció",
+      "fullName": "Animációs látásmód fejlesztés",
+      "nameComment": "Animációs látásmód fejlesztése",
+      "activity": 3,
+      "type": "private"
+    },
+    {
+      "id": 8,
+      "ids": 1007,
+      "name": "HTML",
+      "fullName": "HTML tanulás",
+      "nameComment": "HTLM ismeretek fejlesztése",
+      "activity": 3,
+      "type": "private"
+    },
+    {
+      "id": 9,
+      "ids": 1008,
+      "name": "Céges Dolgok",
+      "fullName": "Hivatalos feladatok",
+      "nameComment": "Céggel kapcsolatos feladatok",
+      "activity": 3,
+      "type": "private"
+    },
+    {
+      "id": 10,
+      "ids": 1009,
+      "name": "Webdesign",
+      "fullName": "Honlap tervezés",
+      "nameComment": "Digitális megjelenés látásmódjának a fejlesztése",
+      "activity": 3,
+      "type": "private"
+    },
+    {
+      "id": 11,
+      "ids": 1010,
+      "name": "Tipográfia",
+      "fullName": "Tipográfia gyakorlása",
+      "nameComment": "Kommunikációs hierarchia megjelenítése",
+      "activity": 3,
+      "type": "private"
+    },
+    {
+      "id": 12,
+      "ids": 1011,
+      "name": "Fotóretusálás",
+      "fullName": "Fotóretusálás gyakorlása",
+      "nameComment": "Fotók megjelenítésének a feljavítása",
+      "activity": 3,
+      "type": "private"
+    },
+    {
+      "id": 13,
+      "ids": 1012,
+      "name": "Angol",
+      "fullName": "Angol nyelvtanulás",
+      "nameComment": "Angol nyelv tanulása",
+      "activity": 3,
+      "type": "private"
+    },
+    {
+      "id": 14,
+      "ids": 1013,
+      "name": "Montázs",
+      "fullName": "Képek Montázsolása",
+      "nameComment": "Több kép összevágása hogy egy új képet alkosson",
+      "activity": 3,
+      "type": "private"
+    },
+    {
+      "id": 15,
+      "ids": 1014,
+      "name": "Kalligráfia",
+      "fullName": "Kalligráfia gyakorlás",
+      "nameComment": "Kézírás fejlesztés",
+      "activity": 3,
+      "type": "private"
+    },
+    {
+      "id": 16,
+      "ids": 1015,
+      "name": "Munka keresés",
+      "fullName": "Állás és Munka keresés",
+      "nameComment": "Új állás és munka keresés",
+      "activity": 3,
+      "type": "private"
+    },
+    {
+      "id": 17,
+      "ids": 1016,
+      "name": "Sommersby",
+      "fullName": "Februári bannerek",
+      "nameComment": "6 méretben mutálandó, 640x360, 970x250...",
+      "activity": 3,
+      "type": "work"
+    }
   ],
   "szabadnaposObj": [
-    {"id":0, "place":"07:00", "ids":1001, "type":"private" },
-    {"id":1, "place":"08:00", "ids":1009, "type":"private" },
-    {"id":2, "place":"09:00", "ids":1004, "type":"private" },
-    {"id":3, "place":"10:00", "ids":1004, "type":"private" },
-    {"id":4, "place":"11:00", "ids":1004, "type":"private" },
-    {"id":5, "place":"12:00", "ids":0, "type":"private" },
-    {"id":6, "place":"13:00", "ids":0, "type":"private" },
-    {"id":7, "place":"14:00", "ids":1012, "type":"private" },
-    {"id":8, "place":"15:00", "ids":1012, "type":"private" },
-    {"id":9, "place":"16:00", "ids":1012, "type":"private" },
-    {"id":10, "place":"17:00", "ids":1002, "type":"private" },
-    {"id":11, "place":"18:00", "ids":1002, "type":"private" },
-    {"id":12, "place":"19:00", "ids":1001, "type":"private" }
+    {
+      "id": 0,
+      "place": "07:00",
+      "ids": 1001,
+      "type": "private"
+    },
+    {
+      "id": 1,
+      "place": "08:00",
+      "ids": 1009,
+      "type": "private"
+    },
+    {
+      "id": 2,
+      "place": "09:00",
+      "ids": 1004,
+      "type": "private"
+    },
+    {
+      "id": 3,
+      "place": "10:00",
+      "ids": 1004,
+      "type": "private"
+    },
+    {
+      "id": 4,
+      "place": "11:00",
+      "ids": 1004,
+      "type": "private"
+    },
+    {
+      "id": 5,
+      "place": "12:00",
+      "ids": 0,
+      "type": "private"
+    },
+    {
+      "id": 6,
+      "place": "13:00",
+      "ids": 0,
+      "type": "private"
+    },
+    {
+      "id": 7,
+      "place": "14:00",
+      "ids": 1012,
+      "type": "private"
+    },
+    {
+      "id": 8,
+      "place": "15:00",
+      "ids": 1012,
+      "type": "private"
+    },
+    {
+      "id": 9,
+      "place": "16:00",
+      "ids": 1012,
+      "type": "private"
+    },
+    {
+      "id": 10,
+      "place": "17:00",
+      "ids": 1002,
+      "type": "private"
+    },
+    {
+      "id": 11,
+      "place": "18:00",
+      "ids": 1002,
+      "type": "private"
+    },
+    {
+      "id": 12,
+      "place": "19:00",
+      "ids": 1001,
+      "type": "private"
+    }
   ],
   "munkanaposObj": [
-    {"id":0, "place":"07:00", "ids":1001, "type":"work" },
-    {"id":1, "place":"08:00", "ids":1009, "type":"work" },
-    {"id":2, "place":"09:00", "ids":1004, "type":"work" },
-    {"id":3, "place":"10:00", "ids":1004, "type":"work" },
-    {"id":4, "place":"11:00", "ids":1004, "type":"work" },
-    {"id":5, "place":"12:00", "ids":0, "type":"work" },
-    {"id":6, "place":"13:00", "ids":0, "type":"work" },
-    {"id":7, "place":"14:00", "ids":1012, "type":"work" },
-    {"id":8, "place":"15:00", "ids":1012, "type":"work" },
-    {"id":9, "place":"16:00", "ids":1012, "type":"work" },
-    {"id":10, "place":"17:00", "ids":1002, "type":"work" },
-    {"id":11, "place":"18:00", "ids":1002, "type":"work" },
-    {"id":12, "place":"19:00", "ids":1001, "type":"work" }
+    {
+      "id": 0,
+      "place": "07:00",
+      "ids": 1001,
+      "type": "work"
+    },
+    {
+      "id": 1,
+      "place": "08:00",
+      "ids": 1009,
+      "type": "work"
+    },
+    {
+      "id": 2,
+      "place": "09:00",
+      "ids": 1004,
+      "type": "work"
+    },
+    {
+      "id": 3,
+      "place": "10:00",
+      "ids": 1004,
+      "type": "work"
+    },
+    {
+      "id": 4,
+      "place": "11:00",
+      "ids": 1004,
+      "type": "work"
+    },
+    {
+      "id": 5,
+      "place": "12:00",
+      "ids": 0,
+      "type": "work"
+    },
+    {
+      "id": 6,
+      "place": "13:00",
+      "ids": 0,
+      "type": "work"
+    },
+    {
+      "id": 7,
+      "place": "14:00",
+      "ids": 1012,
+      "type": "work"
+    },
+    {
+      "id": 8,
+      "place": "15:00",
+      "ids": 1012,
+      "type": "work"
+    },
+    {
+      "id": 9,
+      "place": "16:00",
+      "ids": 1012,
+      "type": "work"
+    },
+    {
+      "id": 10,
+      "place": "17:00",
+      "ids": 1002,
+      "type": "work"
+    },
+    {
+      "id": 11,
+      "place": "18:00",
+      "ids": 1002,
+      "type": "work"
+    },
+    {
+      "id": 12,
+      "place": "19:00",
+      "ids": 1001,
+      "type": "work"
+    }
   ],
   "masterObject": [
-    {"id":0, "name":"Szabadnapos", "napirend":"http://localhost:4400/szabadnaposObj", "completed":2 },
-    {"id":1, "name":"Munkanapos", "napirend":"http://localhost:4400/munkanaposObj", "completed":0 }
+    {
+      "id": 0,
+      "name": "Szabadnapos",
+      "napirend": "http://localhost:4400/szabadnaposObj",
+      "completed": 2
+    },
+    {
+      "id": 1,
+      "name": "Munkanapos",
+      "napirend": "http://localhost:4400/munkanaposObj",
+      "completed": 0
+    }
   ],
   "hoursActive": [
-    {"id":0, "name":"07:00" },
-    {"id":1, "name":"08:00" },
-    {"id":2, "name":"09:00" },
-    {"id":3, "name":"10:00" },
-    {"id":4, "name":"11:00" },
-    {"id":5, "name":"12:00" },
-    {"id":6, "name":"13:00" },
-    {"id":7, "name":"14:00" },
-    {"id":8, "name":"15:00" },
-    {"id":9, "name":"16:00" },
-    {"id":10, "name":"17:00" },
-    {"id":11, "name":"18:00" },
-    {"id":12, "name":"19:00" }
+    {
+      "id": 0,
+      "name": "07:00"
+    },
+    {
+      "id": 1,
+      "name": "08:00"
+    },
+    {
+      "id": 2,
+      "name": "09:00"
+    },
+    {
+      "id": 3,
+      "name": "10:00"
+    },
+    {
+      "id": 4,
+      "name": "11:00"
+    },
+    {
+      "id": 5,
+      "name": "12:00"
+    },
+    {
+      "id": 6,
+      "name": "13:00"
+    },
+    {
+      "id": 7,
+      "name": "14:00"
+    },
+    {
+      "id": 8,
+      "name": "15:00"
+    },
+    {
+      "id": 9,
+      "name": "16:00"
+    },
+    {
+      "id": 10,
+      "name": "17:00"
+    },
+    {
+      "id": 11,
+      "name": "18:00"
+    },
+    {
+      "id": 12,
+      "name": "19:00"
+    }
   ],
   "hoursSpecial": [
-    {"id":0, "name":"12:00" },
-    {"id":1, "name":"13:00" },
-    {"id":2, "name":"18:00" }
+    {
+      "id": 0,
+      "name": "12:00"
+    },
+    {
+      "id": 1,
+      "name": "13:00"
+    },
+    {
+      "id": 2,
+      "name": "18:00"
+    }
   ],
   "hoursWorking": [
-    {"id":0, "name":"09:00" },
-    {"id":1, "name":"10:00" },
-    {"id":2, "name":"11:00" },
-    {"id":3, "name":"12:00" },
-    {"id":4, "name":"13:00" },
-    {"id":5, "name":"14:00" },
-    {"id":6, "name":"15:00" },
-    {"id":7, "name":"16:00" },
-    {"id":8, "name":"17:00" }
+    {
+      "id": 0,
+      "name": "09:00"
+    },
+    {
+      "id": 1,
+      "name": "10:00"
+    },
+    {
+      "id": 2,
+      "name": "11:00"
+    },
+    {
+      "id": 3,
+      "name": "12:00"
+    },
+    {
+      "id": 4,
+      "name": "13:00"
+    },
+    {
+      "id": 5,
+      "name": "14:00"
+    },
+    {
+      "id": 6,
+      "name": "15:00"
+    },
+    {
+      "id": 7,
+      "name": "16:00"
+    },
+    {
+      "id": 8,
+      "name": "17:00"
+    }
   ],
   "profile": {
     "name": "typicode"
@@ -132,6 +604,12 @@
     "archiveCta": "Archives",
     "statsCta": "Stats",
     "copyText": "Orarend.hu",
-    "siteName": "Órarend"
+    "siteName": "Órarend",
+    "newName": "Új",
+    "doneName": "Rögzítés",
+    "abortName": "Mégsem",
+    "activeClassName": "Aktív osztály:",
+    "commentName": "Hozzáfűzendő megjegyzés:",
+    "errorSiteName": "Hiba!"
   }
 }

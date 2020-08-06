@@ -24,7 +24,7 @@ export interface Classes {
 // a classesObject megjegyzéseket tárolja
 export interface ClassesComment {
   [x: string]: any;
-  [index:number] : {id?:number, ids:number, hour:string, comment:string, name?:string}
+  [index:number] : {id?:number, ids:number, hour:string, comment:string, name?:string, commentDate:string }
 }
 
 
@@ -65,7 +65,13 @@ export interface LanguageObj {
   copyText:string,
   baseClassesA:string,
   commentViewNumber:number,  // hány hozzászólás látszódjon
-  baseClassesB:string
+  baseClassesB:string,
+  // ezek az új megjegyzés hozzáadásához szükségesek,
+  newName:string,
+  doneName:string,
+  abortName:string,
+  activeClassName:string,
+  commentName:string
 
 }
 

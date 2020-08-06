@@ -80,6 +80,9 @@ export class Or2Service implements OnInit {
   // a felhasználó nevét tárolja el
   userName:string = 'Flóra Krisztián';
 
+  // hidden elemek:
+  addCommentView:boolean = false;
+
   // a felhasználó nevét tartalmazza egyelőre
   userObject = { name:this.userName };
 
@@ -140,7 +143,7 @@ export class Or2Service implements OnInit {
         className = this.classesObject[classes].name;
         break;
       } else {
-        className = 'Error! No ID found!'
+        className = 'Error! No ID found! by getClassesName'
       }
     }
     return className;
@@ -149,12 +152,22 @@ export class Or2Service implements OnInit {
 
   // add new comment to the comment array (to the front)
   // ki kell még dolgozni!
-  addNewComment( newC:ClassesComment ){
+  addNewComment( ids:number ){
 
-    var newCommentObject:ClassesComment = [];
-    newCommentObject = this.commentObject;
-    //newCommentObject.unshift( newC );
-    this.commentObject = newCommentObject;
+    console.log("lefut", ids);
+    this.addCommentView = true;
+    // megjelenítem a comment hozzáfűzés ablakot
+    // létrehozok egy ClassesComment objektumot ami kommunikál a szerverrel
+    //  ids
+    //  hour
+    //  comment
+    //  commentDate
+
+
+    //newC?:ClassesComment
+    //var newCommentObject:ClassesComment = [];
+    //newCommentObject = this.commentObject;
+    //this.commentObject = newCommentObject;
 
   }
 
@@ -338,6 +351,9 @@ export class Or2Service implements OnInit {
     return this.classesObject.filter( (u: { ids: number; }) => u.ids == ev )[0].name;
     
   }
+
+
+
   ngOnInit() {
     
   }

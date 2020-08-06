@@ -5,7 +5,7 @@
             <div *ngFor="let hour of master.napirend">
                 <div class="workClass" *ngIf="hour.type == 'work'">×</div>
                 <div class="hour" [ngClass]="{'inactiveHourBox':this.or2.hoursObject.special.includes(hour.place)}">
-                    <div class="bg">{{hour.name}}</div><div class="addComment"><a href="">+</a></div>
+                    <div class="bg">{{hour.name}}</div><div class="addComment"><a  (click)="this.or2.addNewComment(hour)">+</a></div>
                 </div>
             </div>
         </div>
