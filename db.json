@@ -605,11 +605,12 @@
     "statsCta": "Stats",
     "copyText": "Orarend.hu",
     "siteName": "Órarend",
-    "newName": "Új",
+    "newName": "Új Megjegyzés",
     "doneName": "Rögzítés",
     "abortName": "Mégsem",
     "activeClassName": "Aktív osztály:",
     "commentName": "Hozzáfűzendő megjegyzés:",
+    "basicCopyFormfield": "Ne feledd, csak röviden, max 20 karacter!",
     "errorSiteName": "Hiba!"
   }
 }

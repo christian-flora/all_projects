@@ -11,8 +11,23 @@ export class Or2Service implements OnInit {
   // todo: connect to json
   // \{^_^}/ hi! 
   // json-server --watch db.json --p 4400
-
   
+  
+  
+  // todo: 
+  
+  // előkészíteni az új megjegyzés container -t
+  // tartalmat kiolvasni az adatbázisból
+  // beviteli mezőt kialakítani
+  // beviteli mező taralmának lekérése
+  // elküldendő objektum összeállítása
+  // kapcsolat kialakítása a json-nal
+
+  // connect the master day saver "Teljesítve"
+  // - ready the new master day array
+  // - upload to json the new array on btn event
+  // - refresh the master day done counter
+
   // todo: drag and drop <- research
   // - btn on :: surface
   // - duplicate and position the btn abow the original btn
@@ -23,20 +38,9 @@ export class Or2Service implements OnInit {
   // - on release - save new parameters on the master time
   // - delete new draggable btn
 
-  // - json-ből masterek adatait lekérni, majd kiegészíteni a mentett állományt a nevekkel
-  // - Napirend ki lett egészítve egy name? változóval ami eltárolja a jövőben a nevet 
-
-  // todo: connect the master day saver "Teljesítve"
-  // - ready the new master day array
-  // - upload to json the new array on btn event
-  // - refresh the master day done counter
 
 
-  // hibalista:
-  // x commentek száma: szerver indítást követő első megjelenítés hibásan jeleníti meg 
-  //   a commentek számát
-  // - commentek száma: össze kell kötni a lekérést hogy egyszerre legyen meg az információ
-  //   jelenleg sorba van kötve (lekéri langObj-et majd a comment obj)
+  // bugs:
 
 
 
@@ -54,6 +58,8 @@ export class Or2Service implements OnInit {
   //    azt feltételezem hogy dolgoznom kellene, de cserébe inkább a magán dolgaimat csinálom
   //    így az adott órát X-elem ki amikor nem tudtam a maszekkal foglalkozni :D
   //    cél hogy saját lábon álljak és a munkát is egy megrenddelőként kell tekinteni
+
+
 
   
   // EGYÉB SZÖVEGEK

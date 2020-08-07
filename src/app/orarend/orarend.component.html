@@ -1,8 +1,15 @@
+
+    <div *ngIf="this.or2.addCommentView" class="addNewCommentStyle">
+            <div class="commentDarker">
+                <div class="commentHolder">
+                    <div class="titleNewComment"> {{this.or2.languageObject.newName}} </div>
+                    <div class="closeNewComment">×</div>
+            </div>
+            </div>
+    </div>
+
 <div class="orarendholder">
 
-    <div *ngIf="this.or2.addCommentView">
-        <div>Rejtett tartalom {{this.or2.languageObject.newName}}</div>
-    </div>
     <div class="contentHolder">
         <app-or2content></app-or2content>
     </div>

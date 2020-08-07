@@ -71,7 +71,8 @@ export interface LanguageObj {
   doneName:string,
   abortName:string,
   activeClassName:string,
-  commentName:string
+  commentName:string,
+  basicCopyFormfield:string
 
 }
 
