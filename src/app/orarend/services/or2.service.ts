@@ -13,7 +13,7 @@ export class Or2Service implements OnInit {
   // json-server --watch db.json --p 4400
   
   
-  
+
   // todo: 
   
   // előkészíteni az új megjegyzés container -t
@@ -136,6 +136,7 @@ export class Or2Service implements OnInit {
   // KOMMENTEK - a megjegyzési körök és adott napi órához
   // comment object, minden megjegyzést tartalmaz
   commentObject:ClassesComment = [];
+  newCommentObj:ClassesComment = [];
 
   // az utolsó X (beállítástól függően) commentet tartalmazza, célja: ezt figyeli a comment component
   inversCommentObj: ClassesComment = [];
@@ -158,16 +159,19 @@ export class Or2Service implements OnInit {
 
   // add new comment to the comment array (to the front)
   // ki kell még dolgozni!
-  addNewComment( ids:number ){
+  addNewComment( ids:Napirend ){
 
-    console.log("lefut", ids);
+    console.log("lefut", ids.ids, ids.name, ids.place, this.newCommentObj );
     this.addCommentView = true;
+
+    //this.newCommentObj.push()
+    
     // megjelenítem a comment hozzáfűzés ablakot
     // létrehozok egy ClassesComment objektumot ami kommunikál a szerverrel
-    //  ids
-    //  hour
-    //  comment
-    //  commentDate
+    //  ids - ez már megvan
+    //  hour - ezt el kell kérni, amikor az ids-t 
+    //  comment - eza következő lépésben lesz meg
+    //  commentDate - ezt meg hozzáadjuk amikor jóvá van hagyva a comment
 
 
     //newC?:ClassesComment
@@ -175,6 +179,18 @@ export class Or2Service implements OnInit {
     //newCommentObject = this.commentObject;
     //this.commentObject = newCommentObject;
 
+  }
+  addNewCommentToJson( comm ){
+    
+    if( comm.value !== '') {
+      console.log(comm.value);
+    } else {
+      console.log('error, nem töltötte ki a tartalmat');
+    }
+    
+  }
+  closeNewComment(){
+    this.addCommentView = false;
   }
 
   // az összes comment számát tárolja el, inverzComment definiálásához szükséges

@@ -3,7 +3,24 @@
             <div class="commentDarker">
                 <div class="commentHolder">
                     <div class="titleNewComment"> {{this.or2.languageObject.newName}} </div>
-                    <div class="closeNewComment">×</div>
+                    <div class="closeNewComment" (click)="this.or2.closeNewComment()">×</div>
+                    <div class="commentForm">
+                        <input
+                         type="text"
+                         placeholder="add your sdf"
+                         #newComment
+                        >
+                    </div>
+                    <div class="commentButtons">
+                        <button
+                        type="reset"
+                        (click)="this.or2.closeNewComment()"
+                        >mégsem</button>
+                        <button
+                         type="submit"
+                         (click)="this.or2.addNewCommentToJson( newComment )"
+                        >jóváhagy</button>
+                    </div>
             </div>
             </div>
     </div>
