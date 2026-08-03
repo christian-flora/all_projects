@@ -8,8 +8,8 @@ import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 export class RstrLifeComponent implements OnInit, OnDestroy {
   scrolled = false;
   visible: { [key: string]: boolean } = {
-    rhythm: false,
-    practice: false,
+    nev: false,
+    agak: false,
     close: false
   };
 
@@ -28,7 +28,7 @@ export class RstrLifeComponent implements OnInit, OnDestroy {
             }
           });
         },
-        { threshold: 0.22 }
+        { threshold: 0.2 }
       );
 
       setTimeout(() => {
@@ -38,7 +38,7 @@ export class RstrLifeComponent implements OnInit, OnDestroy {
         }
       }, 0);
     } else {
-      this.visible = { rhythm: true, practice: true, close: true };
+      this.visible = { nev: true, agak: true, close: true };
     }
   }
 
