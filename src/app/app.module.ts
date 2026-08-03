@@ -18,6 +18,7 @@ import { Or2hoursComponent } from './orarend/or2content/or2hours/or2hours.compon
 import { Or2linksComponent } from './orarend/or2content/or2links/or2links.component';
 import { Or2masterComponent } from './orarend/or2content/or2master/or2master.component';
 import { HomeComponent } from './home/home.component';
+import { RstrLifeComponent } from './rstr-life/rstr-life.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +35,15 @@ import { HomeComponent } from './home/home.component';
     Or2hoursComponent,
     Or2linksComponent,
     Or2masterComponent,
-    HomeComponent
+    HomeComponent,
+    RstrLifeComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       { path:'', component:HomeComponent }, 
-      { path:'orarend', component:OrarendComponent }
+      { path:'orarend', component:OrarendComponent },
+      { path:'rstr-life', component:RstrLifeComponent }
     ]),
     HttpClientModule
   ],

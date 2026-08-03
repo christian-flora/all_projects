@@ -1,0 +1,166 @@
+<div class="rstr" [class.scrolled]="scrolled">
+  <header class="nav">
+    <a class="nav-brand" routerLink="/rstr-life">RSTR</a>
+    <nav class="nav-links">
+      <button type="button" (click)="scrollTo('nev')">A név</button>
+      <button type="button" (click)="scrollTo('agak')">Ágak</button>
+    </nav>
+    <a class="nav-back" routerLink="/">Projektek</a>
+  </header>
+
+  <section class="hero" aria-label="RSTR Life">
+    <div
+      class="hero-media"
+      role="img"
+      aria-label="Színes mozaikcsempék közelről"
+    ></div>
+    <div class="hero-veil"></div>
+    <div class="hero-copy">
+      <p class="brand">RSTR Life</p>
+      <h1>Egy név. Több kézműves és digitális ág.</h1>
+      <p class="lede">
+        Product design az első. Mellettük fotó, üveg, mozaik, gyerekappok és fűtéskarbantartás — mind RSTR.
+      </p>
+      <div class="cta-row">
+        <button type="button" class="cta-primary" (click)="scrollTo('agak')">
+          Nézd az ágakat
+        </button>
+        <button type="button" class="cta-ghost" (click)="scrollTo('nev')">
+          Honnan a név
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="nev"
+    class="section nev"
+    data-reveal="nev"
+    [class.in]="visible.nev"
+  >
+    <div class="section-inner nev-layout">
+      <div>
+        <p class="eyebrow">A név</p>
+        <h2>RSTR — a rooster mozaikszava.</h2>
+      </div>
+      <p class="support">
+        A kakas (rooster) szótagjaiból született a márka. Nem rövidítés egy angol szlogenre —
+        saját név a vállalkozásnak, amit az emberek áganként is használnak:
+        RSTR fotó, RSTR mozaik, és így tovább.
+      </p>
+    </div>
+  </section>
+
+  <section
+    id="agak"
+    class="section agak"
+    data-reveal="agak"
+    [class.in]="visible.agak"
+  >
+    <div class="section-inner">
+      <p class="eyebrow">Az ágak</p>
+      <h2>Amit az RSTR összefog.</h2>
+      <p class="support agak-lede">
+        Az elsődleges irány a product / UX design. Mellé jönnek a kézműves, vizuális
+        és gyakorlati ágak — ugyanabból a névből, más szakértelemmel.
+      </p>
+
+      <ol class="branch-list">
+        <li class="branch branch-primary">
+          <div class="branch-meta">
+            <span class="branch-tag">Elsődleges</span>
+            <span class="branch-name">RSTR design</span>
+          </div>
+          <div class="branch-body">
+            <p class="branch-title">Product Designer · UX</p>
+            <p class="branch-copy">
+              Digitális termékek, felületek és felhasználói élmény — ez a vállalkozás magja.
+            </p>
+            <p class="branch-copy">
+              Gyerek oktató, interaktív applikációk — tanulást segítő digitális élmények.
+            </p>
+          </div>
+        </li>
+        <li class="branch">
+          <div class="branch-meta">
+            <span class="branch-name">RSTR fotó</span>
+          </div>
+          <div class="branch-body">
+            <p class="branch-title">Fotózás</p>
+            <p class="branch-copy">
+              Képek, amik megőrzik a fényt, az anyagot és a pillanatot — stúdióban vagy helyszínen.
+            </p>
+            <ul class="branch-subs">
+              <li>Portré fotózás</li>
+              <li>Engagement fotózás</li>
+              <li>Esküvő fotózás</li>
+              <li>Esemény fotózás</li>
+              <li>Állat fotózás</li>
+              <li>Gyerek fotózás</li>
+            </ul>
+          </div>
+        </li>
+        <li class="branch">
+          <div class="branch-meta">
+            <span class="branch-name">RSTR üveg</span>
+          </div>
+          <div class="branch-body">
+            <p class="branch-title">Ólomüveg · Tiffany</p>
+            <p class="branch-copy">
+              Klasszikus ólomüveg és tiffany technika — színes üvegből épített fény és forma.
+            </p>
+          </div>
+        </li>
+        <li class="branch">
+          <div class="branch-meta">
+            <span class="branch-name">RSTR mozaik</span>
+          </div>
+          <div class="branch-body">
+            <p class="branch-title">Csempe mozaik</p>
+            <p class="branch-copy">
+              Csempékből kirakott minták és felületek — a mozaik mint anyag és mint névadó gesztus.
+            </p>
+          </div>
+        </li>
+        <li class="branch">
+          <div class="branch-meta">
+            <span class="branch-name">RSTR fűtés</span>
+          </div>
+          <div class="branch-body">
+            <p class="branch-title">Központi fűtés karbantartás</p>
+            <p class="branch-copy">
+              Vízcsere, szűrőtisztítás, adalékanyagok — praktikus karbantartás a rendszer hosszú
+              élettartamáért.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section
+    class="section close"
+    data-reveal="close"
+    [class.in]="visible.close"
+  >
+    <div
+      class="close-media"
+      role="img"
+      aria-label="Ólomüveg ablak színes fényjátéka"
+    ></div>
+    <div class="close-veil"></div>
+    <div class="close-copy">
+      <p class="brand-sm">RSTR Life</p>
+      <h2>Ugyanaz a kakas. Más-más műhely.</h2>
+      <p class="support">
+        Design, fotó, üveg, mozaik, gyerekapp vagy fűtéskarbantartás — ez az RSTR.
+      </p>
+      <a class="cta-primary" href="mailto:flora.krisztian@gmail.com">Írj az RSTR-nek</a>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>RSTR Life</span>
+    <span>Design · Fotó · Üveg · Mozaik · Fűtés</span>
+  </footer>
+</div>
