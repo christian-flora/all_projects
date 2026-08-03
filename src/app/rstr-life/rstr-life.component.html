@@ -1,0 +1,113 @@
+<div class="rstr" [class.scrolled]="scrolled">
+  <header class="nav">
+    <a class="nav-brand" routerLink="/rstr-life">RSTR</a>
+    <nav class="nav-links">
+      <button type="button" (click)="scrollTo('rhythm')">Rhythm</button>
+      <button type="button" (click)="scrollTo('practice')">Practice</button>
+    </nav>
+    <a class="nav-back" routerLink="/">Projects</a>
+  </header>
+
+  <section class="hero" aria-label="RSTR Life">
+    <div class="hero-media" role="img" aria-label="Mist rising through a quiet forest at dawn"></div>
+    <div class="hero-veil"></div>
+    <div class="hero-copy">
+      <p class="brand">RSTR Life</p>
+      <h1>Restore the day you meant to live.</h1>
+      <p class="lede">
+        A quieter rhythm for work, rest, and the hours that actually belong to you.
+      </p>
+      <div class="cta-row">
+        <button type="button" class="cta-primary" (click)="scrollTo('practice')">
+          Begin restoring
+        </button>
+        <button type="button" class="cta-ghost" (click)="scrollTo('rhythm')">
+          See the rhythm
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="rhythm"
+    class="section rhythm"
+    data-reveal="rhythm"
+    [class.in]="visible.rhythm"
+  >
+    <div class="section-inner">
+      <p class="eyebrow">The rhythm</p>
+      <h2>Life first. Work finds its place.</h2>
+      <p class="support">
+        RSTR is short for restore. The idea is simple: put yourself at the center of the schedule,
+        then let work orbit around the hours that keep you whole.
+      </p>
+      <div class="rhythm-grid" aria-hidden="true">
+        <div class="band band-a">
+          <span>A</span>
+          <em>What restores you</em>
+        </div>
+        <div class="band band-b">
+          <span>B</span>
+          <em>What pays the bills</em>
+        </div>
+        <div class="band band-flow">
+          Either can spill into the other — you decide which one leads.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="practice"
+    class="section practice"
+    data-reveal="practice"
+    [class.in]="visible.practice"
+  >
+    <div class="section-inner practice-layout">
+      <div class="practice-copy">
+        <p class="eyebrow">The practice</p>
+        <h2>One day. Clear hours. Honest attention.</h2>
+        <p class="support">
+          Map the day in living blocks — not task lists. See where your time went,
+          protect the hours that rebuild you, and treat work as one client among many.
+        </p>
+      </div>
+      <ul class="practice-list">
+        <li>
+          <strong>Morning seal</strong>
+          <span>Name the three hours that restore you before the inbox opens.</span>
+        </li>
+        <li>
+          <strong>Living columns</strong>
+          <span>Track A-life and B-work side by side so neither becomes invisible.</span>
+        </li>
+        <li>
+          <strong>Evening return</strong>
+          <span>Close the day with a short note — what returned energy, what took it.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section
+    class="section close"
+    data-reveal="close"
+    [class.in]="visible.close"
+  >
+    <div class="close-media" role="img" aria-label="Still water reflecting soft morning light"></div>
+    <div class="close-veil"></div>
+    <div class="close-copy">
+      <p class="brand-sm">RSTR Life</p>
+      <h2>Come back to yourself.</h2>
+      <p class="support">
+        Start with one restored morning. The rest of the week follows.
+      </p>
+      <a class="cta-primary" routerLink="/orarend">Open the day planner</a>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>RSTR Life</span>
+    <span>Restore · Rhythm · Return</span>
+  </footer>
+</div>
