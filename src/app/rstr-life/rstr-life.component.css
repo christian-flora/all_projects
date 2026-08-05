@@ -388,6 +388,12 @@
   padding-bottom: 0.1rem;
 }
 
+.branch-note {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: rgba(240, 235, 227, 0.55);
+}
+
 /* ——— Close ——— */
 .close {
   position: relative;
