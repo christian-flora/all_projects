@@ -4,6 +4,7 @@
     <nav class="nav-links">
       <button type="button" (click)="scrollTo('nev')">A név</button>
       <button type="button" (click)="scrollTo('agak')">Ágak</button>
+      <button type="button" (click)="scrollTo('jegyzetek')">Jegyzetek</button>
     </nav>
     <a class="nav-back" routerLink="/">Projektek</a>
   </header>
@@ -230,6 +231,40 @@
           </div>
         </li>
       </ol>
+    </div>
+  </section>
+
+  <section
+    id="jegyzetek"
+    class="section jegyzetek"
+    data-reveal="jegyzetek"
+    [class.in]="visible.jegyzetek"
+  >
+    <div class="section-inner">
+      <p class="eyebrow">Jegyzetek</p>
+      <h2>Az egészre vonatkozó elvek.</h2>
+      <p class="support jegyzetek-lede">
+        Nyitott ötletek és minták, amik minden RSTR ágra érvényesek — nem csak egy szolgáltatásra.
+      </p>
+      <ul class="jegyzet-list">
+        <li class="jegyzet">
+          <span class="jegyzet-status" aria-hidden="true">[ ]</span>
+          <div class="jegyzet-body">
+            <p class="jegyzet-text">
+              Az ingyen dolgot kérni kelljen, ne legyen csak úgy elérhető hogy letöltés —
+              fizessenek a letöltők a profiljukkal, hogy valós hús-vér emberek.
+            </p>
+            <p class="jegyzet-ref">
+              Isteni minta:
+              <a
+                href="https://www.instagram.com/reel/DbYYepfvuRQ/?igsh=M3JtOGdiNTB4Zjdw"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Instagram reel</a>
+            </p>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
 

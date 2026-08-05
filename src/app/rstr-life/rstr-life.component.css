@@ -236,6 +236,7 @@
 
 .nev,
 .agak,
+.jegyzetek,
 .close-copy {
   opacity: 0;
   transform: translateY(28px);
@@ -244,6 +245,7 @@
 
 .nev.in,
 .agak.in,
+.jegyzetek.in,
 .close.in .close-copy {
   opacity: 1;
   transform: none;
@@ -440,6 +442,76 @@
   margin-top: 0.5rem;
 }
 
+/* ——— Jegyzetek ——— */
+.jegyzetek {
+  background:
+    linear-gradient(160deg, #ebe4d8 0%, var(--paper) 45%, #e8e1d4 100%);
+}
+
+.jegyzetek h2 {
+  margin-bottom: 1rem;
+}
+
+.jegyzetek-lede {
+  margin-bottom: 2.25rem;
+}
+
+.jegyzet-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.5rem;
+  max-width: 42rem;
+}
+
+.jegyzet {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem 1rem;
+  align-items: start;
+}
+
+.jegyzet-status {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--amber-deep);
+  line-height: 1.55;
+  padding-top: 0.1rem;
+}
+
+.jegyzet-body {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.jegyzet-text {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--ink);
+  max-width: 40ch;
+}
+
+.jegyzet-ref {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--mute);
+}
+
+.jegyzet-ref a {
+  color: var(--cobalt);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.jegyzet-ref a:hover {
+  color: var(--ink);
+}
+
 /* ——— Close ——— */
 .close {
   position: relative;
@@ -548,6 +620,7 @@
   .hero-copy,
   .nev,
   .agak,
+  .jegyzetek,
   .close-copy {
     animation: none !important;
     transition: none !important;
