@@ -10,6 +10,7 @@ export class RstrLifeComponent implements OnInit, OnDestroy {
   visible: { [key: string]: boolean } = {
     nev: false,
     agak: false,
+    jegyzetek: false,
     close: false
   };
 
@@ -38,7 +39,7 @@ export class RstrLifeComponent implements OnInit, OnDestroy {
         }
       }, 0);
     } else {
-      this.visible = { nev: true, agak: true, close: true };
+      this.visible = { nev: true, agak: true, jegyzetek: true, close: true };
     }
   }
 
