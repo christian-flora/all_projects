@@ -442,6 +442,10 @@
   margin-top: 0.5rem;
 }
 
+.branch-offer .branch-subs + .branch-offer-list {
+  margin-top: 1rem;
+}
+
 /* ——— Jegyzetek ——— */
 .jegyzetek {
   background:
