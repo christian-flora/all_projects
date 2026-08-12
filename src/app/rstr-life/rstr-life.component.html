@@ -1,33 +1,43 @@
-<div class="rstr" [class.scrolled]="scrolled">
+<div class="rstr" [class.scrolled]="scrolled" *ngIf="content">
   <header class="nav">
-    <a class="nav-brand" routerLink="/rstr-life">RSTR</a>
+    <a class="nav-brand" routerLink="/rstr-life">{{ content.nav.brand }}</a>
     <nav class="nav-links">
-      <button type="button" (click)="scrollTo('nev')">A név</button>
-      <button type="button" (click)="scrollTo('agak')">Ágak</button>
-      <button type="button" (click)="scrollTo('jegyzetek')">Jegyzetek</button>
+      <button
+        type="button"
+        *ngFor="let link of content.nav.links"
+        (click)="scrollTo(link.id)"
+      >
+        {{ link.label }}
+      </button>
     </nav>
-    <a class="nav-back" routerLink="/">Projektek</a>
+    <a class="nav-back" [routerLink]="content.nav.backLink">{{ content.nav.backLabel }}</a>
   </header>
 
   <section class="hero" aria-label="RSTR Life">
     <div
       class="hero-media"
       role="img"
-      aria-label="Színes mozaikcsempék közelről"
+      [attr.aria-label]="content.hero.mediaAriaLabel"
     ></div>
     <div class="hero-veil"></div>
     <div class="hero-copy">
-      <p class="brand">RSTR Life</p>
-      <h1>Egy név. Több kézműves és digitális ág.</h1>
-      <p class="lede">
-        Product design az első. Mellettük fotó, wedding, print, üveg, mozaik, Kids, interactive, automate és fűtés — mind RSTR.
-      </p>
+      <p class="brand">{{ content.hero.brand }}</p>
+      <h1>{{ content.hero.title }}</h1>
+      <p class="lede">{{ content.hero.lede }}</p>
       <div class="cta-row">
-        <button type="button" class="cta-primary" (click)="scrollTo('agak')">
-          Nézd az ágakat
+        <button
+          type="button"
+          class="cta-primary"
+          (click)="scrollTo(content.hero.ctaPrimary.target)"
+        >
+          {{ content.hero.ctaPrimary.label }}
         </button>
-        <button type="button" class="cta-ghost" (click)="scrollTo('nev')">
-          Honnan a név
+        <button
+          type="button"
+          class="cta-ghost"
+          (click)="scrollTo(content.hero.ctaGhost.target)"
+        >
+          {{ content.hero.ctaGhost.label }}
         </button>
       </div>
     </div>
@@ -41,14 +51,10 @@
   >
     <div class="section-inner nev-layout">
       <div>
-        <p class="eyebrow">A név</p>
-        <h2>RSTR — a rooster mozaikszava.</h2>
+        <p class="eyebrow">{{ content.nev.eyebrow }}</p>
+        <h2>{{ content.nev.title }}</h2>
       </div>
-      <p class="support">
-        A kakas (rooster) szótagjaiból született a márka. Nem rövidítés egy angol szlogenre —
-        saját név a vállalkozásnak, amit az emberek áganként is használnak:
-        RSTR fotó, RSTR mozaik, és így tovább.
-      </p>
+      <p class="support">{{ content.nev.support }}</p>
     </div>
   </section>
 
@@ -59,362 +65,59 @@
     [class.in]="visible.agak"
   >
     <div class="section-inner">
-      <p class="eyebrow">Az ágak</p>
-      <h2>Amit az RSTR összefog.</h2>
-      <p class="support agak-lede">
-        Az elsődleges irány a product / UX design. Mellé jönnek a kézműves, vizuális
-        és gyakorlati ágak — ugyanabból a névből, más szakértelemmel.
-      </p>
+      <p class="eyebrow">{{ content.agak.eyebrow }}</p>
+      <h2>{{ content.agak.title }}</h2>
+      <p class="support agak-lede">{{ content.agak.lede }}</p>
 
       <ol class="branch-list">
-        <li class="branch branch-primary">
+        <li
+          class="branch"
+          *ngFor="let branch of content.agak.branches"
+          [class.branch-primary]="branch.primary"
+        >
           <div class="branch-meta">
-            <span class="branch-tag">Elsődleges</span>
-            <span class="branch-name">RSTR design</span>
+            <span class="branch-tag" *ngIf="branch.tag">{{ branch.tag }}</span>
+            <span class="branch-name">{{ branch.name }}</span>
           </div>
           <div class="branch-body">
-            <p class="branch-title">Product Designer · UX</p>
-            <p class="branch-copy">
-              Digitális termékek, felületek és felhasználói élmény — ez a vállalkozás magja.
-            </p>
-          </div>
-        </li>
-        <li class="branch">
-          <div class="branch-meta">
-            <span class="branch-name">RSTR Kids</span>
-          </div>
-          <div class="branch-body">
-            <p class="branch-title">Modern gyereknevelés · tehetséggondozás</p>
-            <p class="branch-copy">
-              Támogató eszközök a modern gyerekneveléshez — játékos tanulás, tehetséggondozás
-              és helyes szokások, több formában.
-            </p>
-            <div class="branch-offer">
-              <p class="branch-offer-title">Modern gyerekneveléshez támogató eszközök</p>
-              <ul class="branch-subs">
-                <li>Mobil</li>
-                <li>Könyv</li>
-                <li>Újság</li>
-                <li>Kifestő</li>
-                <li>Comic</li>
-                <li>Társas játék</li>
-                <li>Tudományos játék</li>
-                <li>Interaktív játék</li>
-                <li>Beszélgető</li>
-              </ul>
-              <ul class="branch-offer-list">
-                <li>
-                  <span class="branch-offer-label">Helyes élet napirendje</span>
-                  Olyan napirend, ami helyes viselkedést mutat a gyereknek.
-                </li>
-              </ul>
-            </div>
-            <p class="branch-copy branch-note">
-              A világ a gamifikáció irányába indult el — minden terén használják,
-              például interjúknál, tanulásnál, és így tovább.
-            </p>
-          </div>
-        </li>
-        <li class="branch">
-          <div class="branch-meta">
-            <span class="branch-name">RSTR interactive</span>
-          </div>
-          <div class="branch-body">
-            <p class="branch-title">Interaktív applikációk</p>
-            <p class="branch-copy">
-              Érintésre, mozgásra, visszajelzésre épülő digitális élmények — interaktív termékek.
-            </p>
-          </div>
-        </li>
-        <li class="branch">
-          <div class="branch-meta">
-            <span class="branch-name">RSTR automate</span>
-          </div>
-          <div class="branch-body">
-            <p class="branch-title">Vállalati AI automatizálás</p>
-            <p class="branch-copy">
-              Mesterséges intelligencia a céged munkafolyamataiba — ismétlődő feladatok automatizálása,
-              gyorsabb döntéshozatal, kevesebb manuális munka.
-            </p>
-            <ul class="branch-subs">
-              <li>Workflow és folyamat automatizálás</li>
-              <li>AI chatbotok és belső asszisztensek</li>
-              <li>Dokumentumfeldolgozás és adatkinyerés</li>
-              <li>Ügyfélkezelés és értesítések automatizálása</li>
-              <li>Egyedi integrációk meglévő rendszerekkel</li>
+            <p class="branch-title">{{ branch.title }}</p>
+            <p class="branch-copy" *ngIf="branch.copy">{{ branch.copy }}</p>
+
+            <ul class="branch-subs" *ngIf="branch.subs?.length">
+              <li *ngFor="let sub of branch.subs">{{ sub }}</li>
             </ul>
-          </div>
-        </li>
-        <li class="branch">
-          <div class="branch-meta">
-            <span class="branch-name">RSTR fotó</span>
-          </div>
-          <div class="branch-body">
-            <p class="branch-title">Fotózás</p>
-            <p class="branch-copy">
-              Képek, amik megőrzik a fényt, az anyagot és a pillanatot — stúdióban vagy helyszínen.
-            </p>
-            <ul class="branch-subs">
-              <li>Portré fotózás</li>
-              <li>Engagement fotózás</li>
-              <li>Esemény fotózás</li>
-              <li>Állat fotózás</li>
-              <li>Gyerek fotózás</li>
-              <li>Egyedi bekeretezett fotók</li>
-            </ul>
-            <div class="branch-offer">
-              <p class="branch-offer-title">Kép effektelés</p>
-              <p class="branch-copy branch-note">
-                Utómunka és vizuális effektek a fotókhoz — Photoshopban, retusban vagy AI-val.
-              </p>
-              <ul class="branch-offer-list">
-                <li>
-                  <span class="branch-offer-label">Fraktál üveg effekt</span>
-                  Kép import, réteg duplázás, háttérben téglalap a kép mögé. Az első rétegen
-                  Gaussian blur, majd Filter Gallery → Distort → Glass — fractal textúra betöltése.
-                  A textúra fájlok a tutorial szerző bio linkjében érhetők el.
-                </li>
-                <li>
-                  <span class="branch-offer-label">Vakús multi strobe effekt</span>
-                  Egyetlen expozíció alatt a vaku többször villan — több állapotot vagy világítási
-                  szintet rögzít ugyanabban a képen: mozgásnyomok, rétegzett fény, „szellem” alakok
-                  vagy több póz egy fotóban. Stúdióban szabályozott vakúval, helyszínen vakuval.
-                </li>
-              </ul>
-              <p class="jegyzet-ref">
-                Minta / tutorial:
-                <a
-                  href="https://www.instagram.com/reel/Db54aJRs2Ck/?igsh=OWN3ZGx2ejZvNmZu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >Instagram reel · fraktál üveg effekt</a>
-              </p>
-            </div>
-          </div>
-        </li>
-        <li class="branch">
-          <div class="branch-meta">
-            <span class="branch-name">RSTR wedding</span>
-          </div>
-          <div class="branch-body">
-            <p class="branch-title">Esküvői fotózás</p>
-            <p class="branch-copy">
-              Az egész nap megőrzése — a ceremóniától a lakodalom pillanataiig.
-              Fotó, ólomüveg emlék, illusztráció, AI kompozíció, web és nyomdai kellékek egy stílusban.
-            </p>
-            <ul class="branch-subs">
-              <li>Helyszíni fotóhely kialakítás a lakodalom idején</li>
-              <li>Telefon háttérkép</li>
-            </ul>
-            <p class="branch-copy branch-note">
-              Fotóhelynél: projektorral kivetített háttérfal, vagy vakuval extra bevilágítás.
-            </p>
-            <div class="branch-offer">
-              <p class="branch-offer-title">Ólomüveg emlék tárgy</p>
-              <ul class="branch-offer-list">
-                <li>
-                  <span class="branch-offer-label">Keret · japán mintára</span>
-                  Keret japán hagyományokra emlékeztető formában — a pontos megoldás még nyitott.
-                </li>
-                <li>
-                  <span class="branch-offer-label">Japán kis illusztráció</span>
-                  Illusztrált, egyedi ólomüveges minták, a párra jellemző elemekkel.
-                </li>
-                <li>
-                  <span class="branch-offer-label">Portré ólomüvegből</span>
-                  Kör formájú, állvánnyal — koszorú a körben, belül a pár, festve.
-                </li>
-              </ul>
 
-              <p class="branch-offer-title">Vektoros illusztrációk</p>
-              <ul class="branch-offer-list">
-                <li>
-                  A fotókból készült vektoros illusztrációk — Malika Favre–szerű stílusban,
-                  ha illik, erotikus beütéssel.
-                </li>
-              </ul>
+            <ng-container *ngFor="let offer of branch.offers">
+              <div class="branch-offer">
+                <p class="branch-offer-title">{{ offer.title }}</p>
+                <p class="branch-copy branch-note" *ngIf="offer.note">{{ offer.note }}</p>
 
-              <p class="branch-offer-title">AI szolgáltatás</p>
-              <ul class="branch-offer-list">
-                <li>
-                  Minden résztvevő megjelenő tárgyáról készül kép, amit az AI
-                  (pl. Midjourney) helyzetbe helyez, komponál.
-                </li>
-              </ul>
+                <ul class="branch-subs" *ngIf="offer.subs?.length">
+                  <li *ngFor="let sub of offer.subs">{{ sub }}</li>
+                </ul>
 
-              <p class="branch-offer-title">Beállás párban</p>
-              <ul class="branch-offer-list">
-                <li>
-                  <span class="branch-offer-label">Filmes plakát szerű fotózás</span>
-                  A pár kedvenc filmjének plakátját újraalkotjuk — vagy kultikus filmeket ajánlunk nekik.
-                  Készülhet AI-val.
-                </li>
-              </ul>
+                <ul class="branch-offer-list" *ngIf="offer.items?.length">
+                  <li *ngFor="let item of offer.items">
+                    <span class="branch-offer-label" *ngIf="item.label">{{ item.label }}</span>
+                    {{ item.text }}
+                  </li>
+                </ul>
 
-              <p class="branch-offer-title">Fotó effekt · Dupla expozíció</p>
-              <p class="branch-copy branch-note">
-                Két (vagy több) expozíció egymásra helyezése — rétegzett, álomszerű képek.
-                Ötletek a wedding anyaghoz:
-              </p>
-              <ul class="branch-offer-list">
-                <li>
-                  <span class="branch-offer-label">Sziluett · helyszín</span>
-                  A pár sziluettje + templom, kert, város vagy a ceremónia helyszíne.
-                </li>
-                <li>
-                  <span class="branch-offer-label">Arc · virág / csokor</span>
-                  Close-up portré levelekkel, csokorral vagy asztaldísszel átfedve.
-                </li>
-                <li>
-                  <span class="branch-offer-label">Kézfogás · égbolt</span>
-                  Gyűrűs kézfogás naplementével, felhőkkel vagy csillagos éggel.
-                </li>
-                <li>
-                  <span class="branch-offer-label">Akkor és most</span>
-                  Gyerekkori / ismerkedős fotó + mai páros portré — egy történet két időből.
-                </li>
-                <li>
-                  <span class="branch-offer-label">Találkozás helye</span>
-                  A város, kávézó vagy táj, ahol találkoztak — a párral összefonva.
-                </li>
-                <li>
-                  <span class="branch-offer-label">Ólomüveg textúra</span>
-                  Portré + ólomüveg / tiffany mintázat — köti az emlék tárgyhoz.
-                </li>
-                <li>
-                  <span class="branch-offer-label">Filmes plakát réteg</span>
-                  A filmes beállás plakát-hangulatával kombinált dupla expozíció.
-                </li>
-                <li>
-                  <span class="branch-offer-label">Stílushoz igazítva</span>
-                  Klasszikus fekete-fehér, modern színes rétegek, vagy sztár-plakát hangulat —
-                  a választott stílusigazításhoz.
-                </li>
-                <li>
-                  <span class="branch-offer-label">Album nyitó / záró</span>
-                  Hero kép az album elején vagy végén — telefon háttérképként is.
-                </li>
-                <li>
-                  <span class="branch-offer-label">In-camera · utómunka · AI</span>
-                  Kamerában, retusban, vagy AI-val (pl. Midjourney) finomítva — ugyanaz a koncepció.
-                </li>
-              </ul>
+                <p class="jegyzet-ref" *ngIf="offer.ref">
+                  {{ offer.ref.prefix }}
+                  <a
+                    [href]="offer.ref.url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >{{ offer.ref.label }}</a>
+                </p>
+              </div>
+            </ng-container>
 
-              <p class="branch-offer-title">Weboldal</p>
-              <ul class="branch-offer-list">
-                <li>
-                  <span class="branch-offer-label">Rive elemekkel</span>
-                  Esküvői weboldal Rive animációkkal.
-                </li>
-                <li>
-                  <span class="branch-offer-label">Esküvői app</span>
-                  Belépéskor az adott esküvőt látja a vendég. Telepítéskor egy esküvő jelenik meg.
-                  Időarányos fizetés — 6 hónap.
-                </li>
-              </ul>
-
-              <p class="branch-offer-title">Stílusigazítás a fotókkal</p>
-              <p class="branch-copy branch-note">
-                A fotók igazodnak az esküvő vizuális stílusához.
-              </p>
-              <ul class="branch-subs">
-                <li>Bony and Cleide</li>
-                <li>Klasszikus</li>
-                <li>Modern</li>
-                <li>Modern sztár</li>
-              </ul>
-
-              <p class="branch-offer-title">Elemek amik még szóba jönnek</p>
-              <ul class="branch-offer-list">
-                <li>
-                  <span class="branch-offer-label">Esküvői weboldal</span>
-                  Az esemény digitális otthona.
-                </li>
-                <li>
-                  <span class="branch-offer-label">Meghívó · nyomdai kellékek · menü · újság · emlékkönyv</span>
-                  Egyedi hajtásmintával és egyedi vágással.
-                </li>
-                <li>
-                  <span class="branch-offer-label">Fotózás · fotó retus</span>
-                  Helyszíni fotózás és utómunka.
-                </li>
-                <li>
-                  <span class="branch-offer-label">Album · nagy formátum</span>
-                  Egyedi album és nagy formátumú képek nyomtatása.
-                </li>
-              </ul>
-
-              <p class="branch-offer-title">Üzleti modell</p>
-              <ul class="branch-offer-list">
-                <li>
-                  <span class="branch-offer-label">Alap ár</span>
-                  Minden képet elkészítem; a végén a képek száma alapján választanak —
-                  stylescape mintákkal illusztrálva, hogy mit kapnak.
-                </li>
-                <li>
-                  <span class="branch-offer-label">Kis · közép · nagy csomag</span>
-                  Ha valaki előre tudja a mennyiséget — ez a forma kicsivel olcsóbb, mint az alap ár.
-                </li>
-              </ul>
-
-              <p class="branch-offer-title">Album csomag egyedi albummal</p>
-              <ul class="branch-subs">
-                <li>Kihajtható album (egyedi hajtásmintával)</li>
-                <li>Egyedi nemesítésekkel</li>
-                <li>Asztali fotók</li>
-                <li>Fali fotók</li>
-              </ul>
-            </div>
-          </div>
-        </li>
-        <li class="branch">
-          <div class="branch-meta">
-            <span class="branch-name">RSTR print</span>
-          </div>
-          <div class="branch-body">
-            <p class="branch-title">Kiadványok · nyomtatott anyagok</p>
-            <p class="branch-copy">
-              Nyomtatott megjelenés a márkádhoz — a tartalomtól a kézbe vehető darabig.
-            </p>
-            <ul class="branch-subs">
-              <li>Kiadványok</li>
-              <li>Brossúrák</li>
-              <li>Szórólapok</li>
-            </ul>
-          </div>
-        </li>
-        <li class="branch">
-          <div class="branch-meta">
-            <span class="branch-name">RSTR üveg</span>
-          </div>
-          <div class="branch-body">
-            <p class="branch-title">Ólomüveg · Tiffany</p>
-            <p class="branch-copy">
-              Klasszikus ólomüveg és tiffany technika — színes üvegből épített fény és forma.
-            </p>
-          </div>
-        </li>
-        <li class="branch">
-          <div class="branch-meta">
-            <span class="branch-name">RSTR mozaik</span>
-          </div>
-          <div class="branch-body">
-            <p class="branch-title">Csempe mozaik</p>
-            <p class="branch-copy">
-              Csempékből kirakott minták és felületek — a mozaik mint anyag és mint névadó gesztus.
-            </p>
-          </div>
-        </li>
-        <li class="branch">
-          <div class="branch-meta">
-            <span class="branch-name">RSTR fűtés</span>
-          </div>
-          <div class="branch-body">
-            <p class="branch-title">Központi fűtés karbantartás</p>
-            <p class="branch-copy">
-              Vízcsere, szűrőtisztítás, adalékanyagok — praktikus karbantartás a rendszer hosszú
-              élettartamáért.
-            </p>
+            <p
+              class="branch-copy branch-note"
+              *ngFor="let note of branch.notes"
+            >{{ note }}</p>
           </div>
         </li>
       </ol>
@@ -428,26 +131,21 @@
     [class.in]="visible.jegyzetek"
   >
     <div class="section-inner">
-      <p class="eyebrow">Jegyzetek</p>
-      <h2>Az egészre vonatkozó elvek.</h2>
-      <p class="support jegyzetek-lede">
-        Nyitott ötletek és minták, amik minden RSTR ágra érvényesek — nem csak egy szolgáltatásra.
-      </p>
+      <p class="eyebrow">{{ content.jegyzetek.eyebrow }}</p>
+      <h2>{{ content.jegyzetek.title }}</h2>
+      <p class="support jegyzetek-lede">{{ content.jegyzetek.lede }}</p>
       <ul class="jegyzet-list">
-        <li class="jegyzet">
+        <li class="jegyzet" *ngFor="let item of content.jegyzetek.items">
           <span class="jegyzet-status" aria-hidden="true">[ ]</span>
           <div class="jegyzet-body">
-            <p class="jegyzet-text">
-              Az ingyen dolgot kérni kelljen, ne legyen csak úgy elérhető hogy letöltés —
-              fizessenek a letöltők a profiljukkal, hogy valós hús-vér emberek.
-            </p>
-            <p class="jegyzet-ref">
-              Isteni minta:
+            <p class="jegyzet-text">{{ item.text }}</p>
+            <p class="jegyzet-ref" *ngIf="item.ref">
+              {{ item.ref.prefix }}
               <a
-                href="https://www.instagram.com/reel/DbYYepfvuRQ/?igsh=M3JtOGdiNTB4Zjdw"
+                [href]="item.ref.url"
                 target="_blank"
                 rel="noopener noreferrer"
-              >Instagram reel</a>
+              >{{ item.ref.label }}</a>
             </p>
           </div>
         </li>
@@ -463,21 +161,19 @@
     <div
       class="close-media"
       role="img"
-      aria-label="Ólomüveg ablak színes fényjátéka"
+      [attr.aria-label]="content.close.mediaAriaLabel"
     ></div>
     <div class="close-veil"></div>
     <div class="close-copy">
-      <p class="brand-sm">RSTR Life</p>
-      <h2>Ugyanaz a kakas. Más-más műhely.</h2>
-      <p class="support">
-        Design, Kids, interactive, automate, fotó, print, üveg, mozaik vagy fűtéskarbantartás — ez az RSTR.
-      </p>
-      <a class="cta-primary" href="mailto:flora.krisztian@gmail.com">Írj az RSTR-nek</a>
+      <p class="brand-sm">{{ content.close.brand }}</p>
+      <h2>{{ content.close.title }}</h2>
+      <p class="support">{{ content.close.support }}</p>
+      <a class="cta-primary" [href]="content.close.cta.href">{{ content.close.cta.label }}</a>
     </div>
   </section>
 
   <footer class="foot">
-    <span>RSTR Life</span>
-    <span>Design · Kids · Interactive · Automate · Fotó · Print · Üveg · Mozaik · Fűtés</span>
+    <span>{{ content.footer.brand }}</span>
+    <span>{{ content.footer.tagline }}</span>
   </footer>
 </div>
