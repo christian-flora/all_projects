@@ -1,0 +1,36 @@
+{
+  "title": "Projects",
+  "intro": "2020 06 10-től az alábbi projektek elérhetőek:",
+  "projects": [
+    {
+      "date": "2026 08",
+      "visible": true,
+      "linkText": "RSTR Life",
+      "routerLink": "/rstr-life"
+    },
+    {
+      "date": "2020 06",
+      "visible": true,
+      "linkText": "Orarend 2",
+      "href": "/orarend"
+    },
+    {
+      "date": "2020 0x",
+      "visible": true,
+      "linkText": "Projekt nyilvántartó (projektenkénti jegyzet készítő; napló szerűen)",
+      "href": "/orarend"
+    },
+    {
+      "date": "2020 0x",
+      "visible": false,
+      "linkText": "Angol tanuló",
+      "href": "/orarend"
+    },
+    {
+      "date": "2020 0x",
+      "visible": false,
+      "linkText": "Helyesírás gyakorló",
+      "href": "/orarend"
+    }
+  ]
+}

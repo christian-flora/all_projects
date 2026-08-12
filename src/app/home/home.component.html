@@ -1,19 +1,13 @@
-<div class="holder">
-    <div class="titlett">Projects</div>
-    <div>2020 06 10-től az alábbi projektek elérhetőek:</div>
-    <div class="aclass">
-        2026 08&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="arrow">→</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go to&nbsp;<a routerLink="/rstr-life">RSTR Life</a>
-    </div>
-    <div class="aclass">
-        2020 06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="arrow">→</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go to&nbsp;<a href="/orarend">Orarend 2</a>
-    </div>
-    <div class="aclass">
-        2020 0x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="arrow">→</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go to&nbsp;<a href="/orarend">Projekt nyilvántartó (projektenkénti jegyzet készítő; napló szerűen)</a>
-    </div>
-    <div class="bclass">
-        2020 0x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="arrow">→</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go to&nbsp;<a href="/orarend">Angol tanuló</a>
-    </div>
-    <div class="bclass">
-        2020 0x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="arrow">→</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go to&nbsp;<a href="/orarend">Helyesírás gyakorló</a>
+<div class="holder" *ngIf="content">
+    <div class="titlett">{{ content.title }}</div>
+    <div>{{ content.intro }}</div>
+    <div
+      *ngFor="let project of content.projects"
+      [class.aclass]="project.visible"
+      [class.bclass]="!project.visible"
+    >
+        {{ project.date }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="arrow">→</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go to&nbsp;
+        <a *ngIf="project.routerLink" [routerLink]="project.routerLink">{{ project.linkText }}</a>
+        <a *ngIf="project.href" [href]="project.href">{{ project.linkText }}</a>
     </div>
 </div>

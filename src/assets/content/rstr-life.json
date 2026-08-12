@@ -1,0 +1,342 @@
+{
+  "nav": {
+    "brand": "RSTR",
+    "links": [
+      { "id": "nev", "label": "A név" },
+      { "id": "agak", "label": "Ágak" },
+      { "id": "jegyzetek", "label": "Jegyzetek" }
+    ],
+    "backLabel": "Projektek",
+    "backLink": "/"
+  },
+  "hero": {
+    "brand": "RSTR Life",
+    "title": "Egy név. Több kézműves és digitális ág.",
+    "lede": "Product design az első. Mellettük fotó, wedding, print, üveg, mozaik, Kids, interactive, automate és fűtés — mind RSTR.",
+    "mediaAriaLabel": "Színes mozaikcsempék közelről",
+    "ctaPrimary": { "label": "Nézd az ágakat", "target": "agak" },
+    "ctaGhost": { "label": "Honnan a név", "target": "nev" }
+  },
+  "nev": {
+    "eyebrow": "A név",
+    "title": "RSTR — a rooster mozaikszava.",
+    "support": "A kakas (rooster) szótagjaiból született a márka. Nem rövidítés egy angol szlogenre — saját név a vállalkozásnak, amit az emberek áganként is használnak: RSTR fotó, RSTR mozaik, és így tovább."
+  },
+  "agak": {
+    "eyebrow": "Az ágak",
+    "title": "Amit az RSTR összefog.",
+    "lede": "Az elsődleges irány a product / UX design. Mellé jönnek a kézműves, vizuális és gyakorlati ágak — ugyanabból a névből, más szakértelemmel.",
+    "branches": [
+      {
+        "primary": true,
+        "tag": "Elsődleges",
+        "name": "RSTR design",
+        "title": "Product Designer · UX",
+        "copy": "Digitális termékek, felületek és felhasználói élmény — ez a vállalkozás magja."
+      },
+      {
+        "name": "RSTR Kids",
+        "title": "Modern gyereknevelés · tehetséggondozás",
+        "copy": "Támogató eszközök a modern gyerekneveléshez — játékos tanulás, tehetséggondozás és helyes szokások, több formában.",
+        "offers": [
+          {
+            "title": "Modern gyerekneveléshez támogató eszközök",
+            "subs": [
+              "Mobil",
+              "Könyv",
+              "Újság",
+              "Kifestő",
+              "Comic",
+              "Társas játék",
+              "Tudományos játék",
+              "Interaktív játék",
+              "Beszélgető"
+            ],
+            "items": [
+              {
+                "label": "Helyes élet napirendje",
+                "text": "Olyan napirend, ami helyes viselkedést mutat a gyereknek."
+              }
+            ]
+          }
+        ],
+        "notes": [
+          "A világ a gamifikáció irányába indult el — minden terén használják, például interjúknál, tanulásnál, és így tovább."
+        ]
+      },
+      {
+        "name": "RSTR interactive",
+        "title": "Interaktív applikációk",
+        "copy": "Érintésre, mozgásra, visszajelzésre épülő digitális élmények — interaktív termékek."
+      },
+      {
+        "name": "RSTR automate",
+        "title": "Vállalati AI automatizálás",
+        "copy": "Mesterséges intelligencia a céged munkafolyamataiba — ismétlődő feladatok automatizálása, gyorsabb döntéshozatal, kevesebb manuális munka.",
+        "subs": [
+          "Workflow és folyamat automatizálás",
+          "AI chatbotok és belső asszisztensek",
+          "Dokumentumfeldolgozás és adatkinyerés",
+          "Ügyfélkezelés és értesítések automatizálása",
+          "Egyedi integrációk meglévő rendszerekkel"
+        ]
+      },
+      {
+        "name": "RSTR fotó",
+        "title": "Fotózás",
+        "copy": "Képek, amik megőrzik a fényt, az anyagot és a pillanatot — stúdióban vagy helyszínen.",
+        "subs": [
+          "Portré fotózás",
+          "Engagement fotózás",
+          "Esemény fotózás",
+          "Állat fotózás",
+          "Gyerek fotózás",
+          "Egyedi bekeretezett fotók"
+        ],
+        "offers": [
+          {
+            "title": "Kép effektelés",
+            "note": "Utómunka és vizuális effektek a fotókhoz — Photoshopban, retusban vagy AI-val.",
+            "items": [
+              {
+                "label": "Fraktál üveg effekt",
+                "text": "Kép import, réteg duplázás, háttérben téglalap a kép mögé. Az első rétegen Gaussian blur, majd Filter Gallery → Distort → Glass — fractal textúra betöltése. A textúra fájlok a tutorial szerző bio linkjében érhetők el."
+              },
+              {
+                "label": "Vakús multi strobe effekt",
+                "text": "Egyetlen expozíció alatt a vaku többször villan — több állapotot vagy világítási szintet rögzít ugyanabban a képen: mozgásnyomok, rétegzett fény, „szellem” alakok vagy több póz egy fotóban. Stúdióban szabályozott vakúval, helyszínen vakuval."
+              }
+            ],
+            "ref": {
+              "prefix": "Minta / tutorial:",
+              "label": "Instagram reel · fraktál üveg effekt",
+              "url": "https://www.instagram.com/reel/Db54aJRs2Ck/?igsh=OWN3ZGx2ejZvNmZu"
+            }
+          }
+        ]
+      },
+      {
+        "name": "RSTR wedding",
+        "title": "Esküvői fotózás",
+        "copy": "Az egész nap megőrzése — a ceremóniától a lakodalom pillanataiig. Fotó, ólomüveg emlék, illusztráció, AI kompozíció, web és nyomdai kellékek egy stílusban.",
+        "subs": [
+          "Helyszíni fotóhely kialakítás a lakodalom idején",
+          "Telefon háttérkép"
+        ],
+        "notes": [
+          "Fotóhelynél: projektorral kivetített háttérfal, vagy vakuval extra bevilágítás."
+        ],
+        "offers": [
+          {
+            "title": "Ólomüveg emlék tárgy",
+            "items": [
+              {
+                "label": "Keret · japán mintára",
+                "text": "Keret japán hagyományokra emlékeztető formában — a pontos megoldás még nyitott."
+              },
+              {
+                "label": "Japán kis illusztráció",
+                "text": "Illusztrált, egyedi ólomüveges minták, a párra jellemző elemekkel."
+              },
+              {
+                "label": "Portré ólomüvegből",
+                "text": "Kör formájú, állvánnyal — koszorú a körben, belül a pár, festve."
+              }
+            ]
+          },
+          {
+            "title": "Vektoros illusztrációk",
+            "items": [
+              {
+                "text": "A fotókból készült vektoros illusztrációk — Malika Favre–szerű stílusban, ha illik, erotikus beütéssel."
+              }
+            ]
+          },
+          {
+            "title": "AI szolgáltatás",
+            "items": [
+              {
+                "text": "Minden résztvevő megjelenő tárgyáról készül kép, amit az AI (pl. Midjourney) helyzetbe helyez, komponál."
+              }
+            ]
+          },
+          {
+            "title": "Beállás párban",
+            "items": [
+              {
+                "label": "Filmes plakát szerű fotózás",
+                "text": "A pár kedvenc filmjének plakátját újraalkotjuk — vagy kultikus filmeket ajánlunk nekik. Készülhet AI-val."
+              }
+            ]
+          },
+          {
+            "title": "Fotó effekt · Dupla expozíció",
+            "note": "Két (vagy több) expozíció egymásra helyezése — rétegzett, álomszerű képek. Ötletek a wedding anyaghoz:",
+            "items": [
+              {
+                "label": "Sziluett · helyszín",
+                "text": "A pár sziluettje + templom, kert, város vagy a ceremónia helyszíne."
+              },
+              {
+                "label": "Arc · virág / csokor",
+                "text": "Close-up portré levelekkel, csokorral vagy asztaldísszel átfedve."
+              },
+              {
+                "label": "Kézfogás · égbolt",
+                "text": "Gyűrűs kézfogás naplementével, felhőkkel vagy csillagos éggel."
+              },
+              {
+                "label": "Akkor és most",
+                "text": "Gyerekkori / ismerkedős fotó + mai páros portré — egy történet két időből."
+              },
+              {
+                "label": "Találkozás helye",
+                "text": "A város, kávézó vagy táj, ahol találkoztak — a párral összefonva."
+              },
+              {
+                "label": "Ólomüveg textúra",
+                "text": "Portré + ólomüveg / tiffany mintázat — köti az emlék tárgyhoz."
+              },
+              {
+                "label": "Filmes plakát réteg",
+                "text": "A filmes beállás plakát-hangulatával kombinált dupla expozíció."
+              },
+              {
+                "label": "Stílushoz igazítva",
+                "text": "Klasszikus fekete-fehér, modern színes rétegek, vagy sztár-plakát hangulat — a választott stílusigazításhoz."
+              },
+              {
+                "label": "Album nyitó / záró",
+                "text": "Hero kép az album elején vagy végén — telefon háttérképként is."
+              },
+              {
+                "label": "In-camera · utómunka · AI",
+                "text": "Kamerában, retusban, vagy AI-val (pl. Midjourney) finomítva — ugyanaz a koncepció."
+              }
+            ]
+          },
+          {
+            "title": "Weboldal",
+            "items": [
+              {
+                "label": "Rive elemekkel",
+                "text": "Esküvői weboldal Rive animációkkal."
+              },
+              {
+                "label": "Esküvői app",
+                "text": "Belépéskor az adott esküvőt látja a vendég. Telepítéskor egy esküvő jelenik meg. Időarányos fizetés — 6 hónap."
+              }
+            ]
+          },
+          {
+            "title": "Stílusigazítás a fotókkal",
+            "note": "A fotók igazodnak az esküvő vizuális stílusához.",
+            "subs": [
+              "Bony and Cleide",
+              "Klasszikus",
+              "Modern",
+              "Modern sztár"
+            ]
+          },
+          {
+            "title": "Elemek amik még szóba jönnek",
+            "items": [
+              {
+                "label": "Esküvői weboldal",
+                "text": "Az esemény digitális otthona."
+              },
+              {
+                "label": "Meghívó · nyomdai kellékek · menü · újság · emlékkönyv",
+                "text": "Egyedi hajtásmintával és egyedi vágással."
+              },
+              {
+                "label": "Fotózás · fotó retus",
+                "text": "Helyszíni fotózás és utómunka."
+              },
+              {
+                "label": "Album · nagy formátum",
+                "text": "Egyedi album és nagy formátumú képek nyomtatása."
+              }
+            ]
+          },
+          {
+            "title": "Üzleti modell",
+            "items": [
+              {
+                "label": "Alap ár",
+                "text": "Minden képet elkészítem; a végén a képek száma alapján választanak — stylescape mintákkal illusztrálva, hogy mit kapnak."
+              },
+              {
+                "label": "Kis · közép · nagy csomag",
+                "text": "Ha valaki előre tudja a mennyiséget — ez a forma kicsivel olcsóbb, mint az alap ár."
+              }
+            ]
+          },
+          {
+            "title": "Album csomag egyedi albummal",
+            "subs": [
+              "Kihajtható album (egyedi hajtásmintával)",
+              "Egyedi nemesítésekkel",
+              "Asztali fotók",
+              "Fali fotók"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "RSTR print",
+        "title": "Kiadványok · nyomtatott anyagok",
+        "copy": "Nyomtatott megjelenés a márkádhoz — a tartalomtól a kézbe vehető darabig.",
+        "subs": [
+          "Kiadványok",
+          "Brossúrák",
+          "Szórólapok"
+        ]
+      },
+      {
+        "name": "RSTR üveg",
+        "title": "Ólomüveg · Tiffany",
+        "copy": "Klasszikus ólomüveg és tiffany technika — színes üvegből épített fény és forma."
+      },
+      {
+        "name": "RSTR mozaik",
+        "title": "Csempe mozaik",
+        "copy": "Csempékből kirakott minták és felületek — a mozaik mint anyag és mint névadó gesztus."
+      },
+      {
+        "name": "RSTR fűtés",
+        "title": "Központi fűtés karbantartás",
+        "copy": "Vízcsere, szűrőtisztítás, adalékanyagok — praktikus karbantartás a rendszer hosszú élettartamáért."
+      }
+    ]
+  },
+  "jegyzetek": {
+    "eyebrow": "Jegyzetek",
+    "title": "Az egészre vonatkozó elvek.",
+    "lede": "Nyitott ötletek és minták, amik minden RSTR ágra érvényesek — nem csak egy szolgáltatásra.",
+    "items": [
+      {
+        "text": "Az ingyen dolgot kérni kelljen, ne legyen csak úgy elérhető hogy letöltés — fizessenek a letöltők a profiljukkal, hogy valós hús-vér emberek.",
+        "ref": {
+          "prefix": "Isteni minta:",
+          "label": "Instagram reel",
+          "url": "https://www.instagram.com/reel/DbYYepfvuRQ/?igsh=M3JtOGdiNTB4Zjdw"
+        }
+      }
+    ]
+  },
+  "close": {
+    "brand": "RSTR Life",
+    "title": "Ugyanaz a kakas. Más-más műhely.",
+    "support": "Design, Kids, interactive, automate, fotó, print, üveg, mozaik vagy fűtéskarbantartás — ez az RSTR.",
+    "mediaAriaLabel": "Ólomüveg ablak színes fényjátéka",
+    "cta": {
+      "label": "Írj az RSTR-nek",
+      "href": "mailto:flora.krisztian@gmail.com"
+    }
+  },
+  "footer": {
+    "brand": "RSTR Life",
+    "tagline": "Design · Kids · Interactive · Automate · Fotó · Print · Üveg · Mozaik · Fűtés"
+  }
+}

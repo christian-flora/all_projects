@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { ContentService } from '../services/content.service';
+import { RstrLifeContent } from '../models/content.models';
 
 @Component({
   selector: 'app-rstr-life',
@@ -6,6 +8,7 @@ import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
   styleUrls: ['./rstr-life.component.css']
 })
 export class RstrLifeComponent implements OnInit, OnDestroy {
+  content: RstrLifeContent;
   scrolled = false;
   visible: { [key: string]: boolean } = {
     nev: false,
@@ -16,31 +19,13 @@ export class RstrLifeComponent implements OnInit, OnDestroy {
 
   private observer: IntersectionObserver;
 
-  ngOnInit(): void {
-    if (typeof IntersectionObserver !== 'undefined') {
-      this.observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const key = (entry.target as HTMLElement).getAttribute('data-reveal');
-              if (key && this.visible.hasOwnProperty(key)) {
-                this.visible[key] = true;
-              }
-            }
-          });
-        },
-        { threshold: 0.2 }
-      );
+  constructor(private contentService: ContentService) {}
 
-      setTimeout(() => {
-        const nodes = document.querySelectorAll('[data-reveal]');
-        for (let i = 0; i < nodes.length; i++) {
-          this.observer.observe(nodes[i]);
-        }
-      }, 0);
-    } else {
-      this.visible = { nev: true, agak: true, jegyzetek: true, close: true };
-    }
+  ngOnInit(): void {
+    this.contentService.getRstrLife().subscribe((data) => {
+      this.content = data;
+      this.initRevealObserver();
+    });
   }
 
   ngOnDestroy(): void {
@@ -59,5 +44,37 @@ export class RstrLifeComponent implements OnInit, OnDestroy {
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  }
+
+  private initRevealObserver(): void {
+    if (typeof IntersectionObserver === 'undefined') {
+      this.visible = { nev: true, agak: true, jegyzetek: true, close: true };
+      return;
+    }
+
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const key = (entry.target as HTMLElement).getAttribute('data-reveal');
+            if (key && this.visible.hasOwnProperty(key)) {
+              this.visible[key] = true;
+            }
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    setTimeout(() => {
+      const nodes = document.querySelectorAll('[data-reveal]');
+      for (let i = 0; i < nodes.length; i++) {
+        this.observer.observe(nodes[i]);
+      }
+    }, 0);
   }
 }
